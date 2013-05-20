@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+
+<PropertyList>
+
+  <path>interior.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>interieur</object-name>
+    <object-name>inttour</object-name>
+    <object-name>inttourporte</object-name>
+    <object-name>inttourvitre</object-name>
+    <object-name>inttourvitreporte</object-name>
+    <object-name>intporte</object-name>
+    <object-name>planchet</object-name>
+    
+    <!-- Objets transparents -->
+    <object-name>intvitres</object-name>
+    <object-name>intvitreporte</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>intvitres</object-name>
+    <object-name>intvitreporte</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>intvitres</object-name>
+    <object-name>intvitreporte</object-name>
+  </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>intvitres</object-name>
+    <object-name>intvitreporte</object-name>
+  </effect>
+
+  <!-- Pilote -->
+  <model>
+    <path>Aircraft/Junkers-W34/Models/Pilot/pilot.xml</path>
+    <offsets>
+      <x-m> -2.71000 </x-m>
+      <y-m> -0.31088 </y-m>
+      <z-m>  0.40000 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Pilot seat -->
+  <model>
+    <path>Aircraft/Junkers-W34/Models/Interior/Seat/seat.xml</path>
+    <offsets>
+      <x-m> -2.43398 </x-m>
+      <y-m> -0.32541 </y-m>
+      <z-m>  0.33948 </z-m>
+    </offsets>
+  </model>
+
+ <!-- Copilot seat -->
+ <model>
+   <path>Aircraft/Junkers-W34/Models/Interior/Seat/seat.xml</path>
+   <offsets>
+     <x-m> -2.43398 </x-m>
+     <y-m>  0.32541 </y-m>
+     <z-m>  0.33948 </z-m>
+   </offsets>
+ </model>
+ 
+  <!-- Pilot yoke -->
+  <model>
+    <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/Yoke/yoke.xml</path>
+    <offsets>
+      <x-m> -2.81144 </x-m>
+      <y-m> -0.32250 </y-m>
+      <z-m> -0.07960 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Copilot yoke -->
+  <model>
+    <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/Yoke/yoke.xml</path>
+    <offsets>
+      <x-m> -2.81144 </x-m>
+      <y-m>  0.32250 </y-m>
+      <z-m> -0.07960 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Tableau de bord -->
+  <model>
+    <path>Aircraft/Junkers-W34/Models/Interior/Panel/panel.xml</path>
+    <offsets>
+      <x-m> -3.12816 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m>  0.63706 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Animation des portes -->
+  <animation>
+    <name>IntLaPorteGauche</name>
+    <object-name>inttourporte</object-name>
+    <object-name>intporte</object-name>
+    <object-name>intvitreporte</object-name>
+    <object-name>inttourvitreporte</object-name>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>IntLaPorteGauche</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>IntLaPorteGauche</object-name>
+    <property>sim/model/door-positions/crew/position-norm</property>
+    <factor> -120 </factor>
+    <center>
+      <x-m> -0.19715 </x-m>
+      <y-m> -0.57306 </y-m>
+      <z-m> -0.22503 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+</PropertyList>
