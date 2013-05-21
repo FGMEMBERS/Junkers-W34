@@ -1,623 +1,68 @@
-<?xml version="1.0" encoding="ISO-8859-1"?> 
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
-  <path>w34.ac</path>
+  <!-- Le fuselage -->
+  <model>
+    <path>Aircraft/Junkers-W34/Models/main.xml</path>
+  </model>
 
-  <nasal>
-    <load>
-      var livery_update = aircraft.livery_update.new("Aircraft/Junkers-W34/Models/Liveries", 10);
-
-      var self = cmdarg();
-
-      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
-      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
-      
-      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
-      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
-    
-      crew_door.alias(float_0);
-      passenger_door.alias(float_1);
-    </load>
-
-    <unload>
-      livery_update.stop();
-      crew_door.unalias();
-      passenger_door.unalias();
-    </unload>
-  </nasal>
-
-  <animation>
-    <!-- Objets opaques -->
-    <object-name>fuselage</object-name>
-    <object-name>ailes</object-name>
-    <object-name>aileronG</object-name>
-    <object-name>aileronD</object-name>
-    <object-name>ailes2</object-name>
-    <object-name>profondeur</object-name>
-    <object-name>direction</object-name>
-    <object-name>porte</object-name>
-
-    <object-name>helice</object-name>
-    <object-name>bol</object-name>
-    <object-name>tourvitre</object-name>
-    <object-name>tourvitreporte</object-name>
-    <object-name>axeGH</object-name>
-    <object-name>axeGB</object-name>
-    <object-name>roueG</object-name>
-    <object-name>axeDH</object-name>
-    <object-name>axeDB</object-name>
-    <object-name>roueD</object-name>
-    <object-name>axeA</object-name>
-    <object-name>roueA</object-name>
-    <object-name>pot</object-name>
-    <object-name>attachepot</object-name>
-    <object-name>cables</object-name>
-    <object-name>antenne</object-name>
-    <object-name>antennetail</object-name>
-    <object-name>prises</object-name>
-    <object-name>radioDirection</object-name>
-    
-    <!-- Objets transparents -->
-    <object-name>vitres</object-name>
-    <object-name>vitreporte</object-name>
-    <object-name>propblur</object-name>
-    <object-name>propdisc</object-name>
-  </animation>
-
-  <animation>
-    <type>material</type>
-    <object-name>fuselage</object-name>
-    <object-name>ailes</object-name>
-    <object-name>aileronG</object-name>
-    <object-name>aileronD</object-name>
-    <object-name>ailes2</object-name>
-    <object-name>profondeur</object-name>
-    <object-name>direction</object-name>
-    <object-name>porte</object-name>
-    
-    <object-name>helice</object-name>
-    <object-name>bol</object-name>
-    <object-name>tourvitre</object-name>
-    <object-name>tourvitreporte</object-name>
-    <object-name>axeGH</object-name>
-    <object-name>axeGB</object-name>
-    <object-name>roueG</object-name>
-    <object-name>axeDH</object-name>
-    <object-name>axeDB</object-name>
-    <object-name>roueD</object-name>
-    <object-name>axeA</object-name>
-    <object-name>roueA</object-name>
-    <object-name>pot</object-name>
-    <object-name>attachepot</object-name>
-    <object-name>cables</object-name>
-    <object-name>antenne</object-name>
-    <object-name>antennetail</object-name>
-    <object-name>prises</object-name>
-    <object-name>radioDirection</object-name>
-    
-    <property-base>sim/model/livery</property-base>
-    <texture-prop>texture</texture-prop>
-    <texture>texture.png</texture>
-    <specular>
-      <red-prop>specular/red</red-prop>
-      <green-prop>specular/green</green-prop>
-      <blue-prop>specular/blue</blue-prop>
-    </specular>
-    <emission>
-      <red-prop>emission/red</red-prop>
-      <green-prop>emission/green</green-prop>
-      <blue-prop>emission/blue</blue-prop>
-    </emission>
-  </animation>
-
-  <effect>
-    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
-    <condition>
-      <not><property>sim/rendering/rembrandt/enabled</property></not>
-    </condition>
-    <object-name>fuselage</object-name>
-    <object-name>ailes</object-name>
-    <object-name>aileronG</object-name>
-    <object-name>aileronD</object-name>
-    <object-name>ailes2</object-name>
-    <object-name>profondeur</object-name>
-    <object-name>direction</object-name>
-    <object-name>porte</object-name>
-  </effect>
-
-  <effect>
-    <inherits-from>Effects/model-combined-deferred</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
-    <object-name>fuselage</object-name>
-    <object-name>ailes</object-name>
-    <object-name>aileronG</object-name>
-    <object-name>aileronD</object-name>
-    <object-name>ailes2</object-name>
-    <object-name>profondeur</object-name>
-    <object-name>direction</object-name>
-    <object-name>porte</object-name>
-  </effect>
-
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>vitres</object-name>
-    <object-name>vitreporte</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
-    <object-name>vitres</object-name>
-    <object-name>vitreporte</object-name>
-    <object-name>propblur</object-name>
-    <object-name>propdisc</object-name>
-  </animation>
-
-  <!-- working for Rembrandt -->
-  <effect>
-    <inherits-from>Effects/model-transparent</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
-    <object-name>vitres</object-name>
-    <object-name>vitreporte</object-name>
-    <object-name>propblur</object-name>
-    <object-name>propdisc</object-name>
-  </effect>
+  <!-- Les roues -->
+  <model>
+    <name>LesRoues</name>
+    <path>Aircraft/Junkers-W34/Models/wheels.xml</path>
+  </model>
 
   <!-- Une ombre pour OSG -->
   <model>
+    <name>OmbreRoues</name>
     <path>Aircraft/Junkers-W34/Models/shadow.xml</path>
     <offsets>
-      <x-m>  0.000 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -1.600 </z-m>
+      <x-m>  0.0 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m> -1.6 </z-m>
     </offsets>
   </model>
-
-  <!-- L'interieur -->
-  <model>
-    <name>Interieur</name>
-    <path>Aircraft/Junkers-W34/Models/Interior/interior.xml</path>
-  </model>
-
-  <!-- For Rembrandt -->
-  <animation>
-    <type>noshadow</type>
-    <object-name>Interieur</object-name>
-  </animation>
-
-  <!-- Cranking effects -->
-  <model>
-    <path>Aircraft/Junkers-W34/Models/Effects/cranking/cranking.xml</path>
-    <offsets>
-      <x-m> -2.68137 </x-m>
-      <y-m> -0.52185 </y-m>
-      <z-m> -0.87047 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Junkers-W34/Models/Effects/cranking/cranking.xml</path>
-    <offsets>
-      <x-m> -2.68137 </x-m>
-      <y-m>  0.52185 </y-m>
-      <z-m> -0.87047 </z-m>
-    </offsets>
-  </model>
-
-  <!-- Effets sur le sol -->
-  <!-- Roue gauche -->
-  <model>
-    <path>Aircraft/Junkers-W34/Models/Effects/ground/ground0.xml</path>
-    <offsets>
-      <x-m> -2.69790 </x-m>
-      <y-m> -1.27007 </y-m>
-      <z-m> -2.16846 </z-m>
-    </offsets>
-  </model>
-
-  <!-- Roue droite -->
-  <model>
-    <path>Aircraft/Junkers-W34/Models/Effects/ground/ground1.xml</path>
-    <offsets>
-      <x-m> -2.69790 </x-m>
-      <y-m>  1.27007 </y-m>
-      <z-m> -2.16846 </z-m>
-    </offsets>
-  </model>
-
-  <!-- Patte de queue -->
-  <model>
-    <path>Aircraft/Junkers-W34/Models/Effects/ground/ground2.xml</path>   
-    <offsets>
-      <x-m>  4.28492 </x-m>
-      <y-m>  0.00000 </y-m>
-      <z-m> -0.71734 </z-m>
-    </offsets>
-  </model>
-
-  <!-- Engine -->
-  <model>
-    <path>Aircraft/Junkers-W34/Models/Engine/engine.xml</path>
-    <offsets>
-      <x-m> -4.60823 </x-m>
-      <y-m>  0.00000 </y-m>
-      <z-m>  0.27400 </z-m>
-    </offsets>
-  </model>
-
-  <!-- L'hélice -->
-  <animation>
-    <name>HeliceComplete</name>
-    <object-name>helice</object-name>
-    <object-name>bol</object-name>
-    <object-name>propdisc</object-name>
-    <object-name>propblur</object-name>
-  </animation>
-
-  <!-- Séléction de l'objet visible en fonction des rpm -->
-  <animation>
-    <type>select</type>
-    <object-name>propdisc</object-name>
-    <condition>
-      <greater-than>
-        <property>engines/engine[0]/rpm</property>
-        <value>900</value>
-      </greater-than>
-    </condition>
-  </animation>
 
   <animation>
     <type>select</type>
-    <object-name>propblur</object-name>
+    <object-name>LesRoues</object-name>
+    <object-name>OmbreRoues</object-name>
     <condition>
-    <and>
-      <greater-than>
-        <property>engines/engine[0]/rpm</property>
-        <value>300.000</value>
-      </greater-than>
-      <less-than>
-        <property>engines/engine[0]/rpm</property>
-        <value>900.001</value>
-      </less-than>
-    </and>
+      <equals>
+        <property>sim/multiplay/generic/string[1]</property>
+        <value>wheels</value>
+      </equals>
     </condition>
   </animation>
+
+  <!-- Les flotteurs -->
+  <model>
+    <name>LesFlotteurs</name>
+    <path>Aircraft/Junkers-W34/Models/floats.xml</path>
+  </model>
+
+  <!-- Une ombre pour OSG -->
+  <model>
+    <name>OmbreFlotteurs</name>
+    <path>Aircraft/Junkers-W34//Models/shadowF.xml</path>
+    <offsets>
+      <x-m> -0.38375 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -2.31323 </z-m>
+    </offsets>
+  </model>
 
   <animation>
     <type>select</type>
-    <object-name>helice</object-name>
+    <object-name>LesFlotteurs</object-name>
+    <object-name>OmbreFlotteurs</object-name>
     <condition>
-      <less-than>
-        <property>engines/engine[0]/rpm</property>
-	<value>900</value>
-      </less-than>
+      <equals>
+        <property>sim/multiplay/generic/string[1]</property>
+        <value>floats</value>
+      </equals>
     </condition>
   </animation>
-
-  <animation>
-    <type>spin</type>
-    <object-name>HeliceComplete</object-name>
-    <condition>
-      <greater-than>
-        <property>engines/engine[0]/rpm</property>
-        <value> 5 </value>
-      </greater-than>
-    </condition>
-    <property>engines/engine[0]/rpm</property>
-    <factor> 1 </factor>
-    <center>
-      <x-m> -5.07367 </x-m>
-      <y-m>  0.00000 </y-m>
-      <z-m>  0.27400 </z-m>
-    </center>
-    <axis>
-      <x> -1 </x>
-      <y>  0 </y>
-      <z>  0 </z>
-    </axis>
-  </animation>
-
-  <!-- Animations des ailerons -->
-  <animation>
-    <type>rotate</type>
-    <object-name>aileronG</object-name>
-    <property>surface-positions/left-aileron-pos-norm</property>
-    <factor> 20 </factor>
-    <axis>
-      <x1-m> -1.13729 </x1-m>
-      <y1-m> -8.42452 </y1-m>
-      <z1-m>  0.13939 </z1-m>
-      <x2-m> -0.91088 </x2-m>
-      <y2-m> -3.83249 </y2-m>
-      <z2-m> -0.32447 </z2-m>
-    </axis>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>aileronD</object-name>
-    <property>surface-positions/right-aileron-pos-norm</property>
-    <factor> 20 </factor>
-    <axis>
-      <x1-m> -0.91088 </x1-m>
-      <y1-m>  3.83249 </y1-m>
-      <z1-m> -0.32447 </z1-m>
-      <x2-m> -1.13729 </x2-m>
-      <y2-m>  8.42452 </y2-m>
-      <z2-m>  0.13939 </z2-m>
-    </axis>
-  </animation>
-
-  <!-- Gouverne de profondeur -->
-  <animation>
-    <type>rotate</type>
-    <object-name>profondeur</object-name>
-    <property>surface-positions/elevator-pos-norm</property>
-    <factor> 20 </factor>
-    <center>
-      <x-m> 4.31441 </x-m>
-      <y-m> 0.00000 </y-m>
-      <z-m> 0.40454 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
-
-  <!-- Gouverne de direction -->
-  <animation>
-    <type>rotate</type>
-    <object-name>direction</object-name>
-    <property>surface-positions/rudder-pos-norm</property>
-    <factor> 20 </factor>
-    <center>
-      <x-m> 4.52490 </x-m>
-      <y-m> 0.00000 </y-m>
-      <z-m> 0.68157 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 0 </y>
-      <z> 1 </z>
-    </axis>
-  </animation>
-
-  <!-- Compression -->
-  <animation>
-    <name>TrainGauche</name>
-    <object-name>roueG</object-name>
-    <object-name>axeGB</object-name>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>TrainGauche</object-name>
-    <property>gear/gear[0]/compression-norm</property>
-    <interpolation>
-      <entry><ind> 0.0000 </ind><dep>   0 </dep></entry>
-      <entry><ind> 0.7565 </ind><dep>  -5 </dep></entry>
-      <entry><ind> 1.0000 </ind><dep> -10 </dep></entry>
-    </interpolation>
-    <center>
-      <x-m> -2.17189 </x-m>
-      <y-m>  0.00000 </y-m>
-      <z-m> -0.71693 </z-m>
-    </center>
-    <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>axeGH</object-name>
-    <property>gear/gear[0]/compression-norm</property>
-    <interpolation>
-      <entry><ind> 0.0000 </ind><dep>   0 </dep></entry>
-      <entry><ind> 0.7565 </ind><dep>  -5 </dep></entry>
-      <entry><ind> 1.0000 </ind><dep> -10 </dep></entry>
-    </interpolation>
-    <center>
-      <x-m> -2.80527 </x-m>
-      <y-m> -1.01247 </y-m>
-      <z-m> -0.63342 </z-m>
-    </center>
-    <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
-
-  <animation>
-    <name>TrainDroit</name>
-    <object-name>roueD</object-name>
-    <object-name>axeDB</object-name>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>TrainDroit</object-name>
-    <property>gear/gear[1]/compression-norm</property>
-    <interpolation>
-      <entry><ind> 0.0000 </ind><dep>   0 </dep></entry>
-      <entry><ind> 0.7565 </ind><dep>   5 </dep></entry>
-      <entry><ind> 1.0000 </ind><dep>  10 </dep></entry>
-    </interpolation>
-    <center>
-      <x-m> -2.17189 </x-m>
-      <y-m>  0.00000 </y-m>
-      <z-m> -0.71693 </z-m>
-    </center>
-    <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>axeDH</object-name>
-    <property>gear/gear[1]/compression-norm</property>
-    <interpolation>
-      <entry><ind> 0.0000 </ind><dep>  0 </dep></entry>
-      <entry><ind> 0.7565 </ind><dep>  5 </dep></entry>
-      <entry><ind> 1.0000 </ind><dep> 10 </dep></entry>
-    </interpolation>
-    <center>
-      <x-m> -2.80527 </x-m>
-      <y-m>  1.01247 </y-m>
-      <z-m> -0.63342 </z-m>
-    </center>
-    <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
-
-  <!-- Rotation des roues lors du roulage -->
-  <animation>
-    <type>spin</type>
-    <object-name>roueG</object-name>
-    <property>gear/gear[0]/rollspeed-ms</property>
-    <factor> -30 </factor>
-    <axis>
-      <x1-m> -2.71433 </x1-m>
-      <y1-m> -1.34263 </y1-m>
-      <z1-m> -1.75120 </z1-m>
-      <x2-m> -2.71433 </x2-m>
-      <y2-m> -1.16503 </y2-m>
-      <z2-m> -1.73566 </z2-m>
-    </axis>
-  </animation>
-
-  <animation>
-    <type>spin</type>
-    <object-name>roueD</object-name>
-    <property>gear/gear[1]/rollspeed-ms</property>
-    <factor> -30 </factor>
-    <axis>
-      <x1-m> -2.71433 </x1-m>
-      <y1-m>  1.16503 </y1-m>
-      <z1-m> -1.73566 </z1-m>
-      <x2-m> -2.71433 </x2-m>
-      <y2-m>  1.34263 </y2-m>
-      <z2-m> -1.75120 </z2-m>
-    </axis>
-  </animation>
-
-  <animation>
-    <type>spin</type>
-    <object-name>roueA</object-name>
-    <property>gear/gear[1]/rollspeed-ms</property>
-    <factor> 30 </factor>
-    <center>
-      <x-m>  4.28031 </x-m>
-      <y-m>  0.00000 </y-m>
-      <z-m> -0.69360 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
-
-  <!-- Animation des portes -->
-  <animation>
-    <name>LaPorteGauche</name>
-    <object-name>porte</object-name>
-    <object-name>tourvitreporte</object-name>
-    <object-name>vitreporte</object-name>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>LaPorteGauche</object-name>
-    <visible>true</visible>
-    <action>
-      <button>0</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>nasal</command>
-        <script>doors.crew.toggle();</script>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>LaPorteGauche</object-name>
-    <property>sim/model/door-positions/crew/position-norm</property>
-    <factor> -120 </factor>
-    <center>
-      <x-m> -0.19715 </x-m>
-      <y-m> -0.57306 </y-m>
-      <z-m> -0.22503 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 0 </y>
-      <z> 1 </z>
-    </axis>
-  </animation>
-
-  <!-- Ajout des effets lumineux -->
-  <model>
-    <path>Aircraft/Junkers-W34/Models/lights/beacon.xml</path>
-    <offsets>
-      <x-m> 3.87484 </x-m>
-      <y-m> 0.00000 </y-m>
-      <z-m> 1.25528 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Junkers-W34/Models/lights/RedLight.xml</path>
-    <offsets>
-      <x-m> -1.94964 </x-m>
-      <y-m> -8.54040 </y-m>
-      <z-m>  0.17975 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Junkers-W34/Models/lights/StrobeLight.xml</path>
-    <offsets>
-      <x-m> -1.84381 </x-m>
-      <y-m> -8.53707 </y-m>
-      <z-m>  0.17883 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Junkers-W34/Models/lights/GreenLight.xml</path>
-    <offsets>
-      <x-m> -1.94964 </x-m>
-      <y-m>  8.54040 </y-m>
-      <z-m>  0.17975 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Junkers-W34/Models/lights/StrobeLight.xml</path>
-    <offsets>
-      <x-m> -1.84381 </x-m>
-      <y-m>  8.53707 </y-m>
-      <z-m>  0.17883 </z-m>
-    </offsets>
-  </model>
 
 </PropertyList>

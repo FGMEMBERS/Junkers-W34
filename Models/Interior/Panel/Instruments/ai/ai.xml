@@ -46,5 +46,21 @@
     </axis>
   </animation>
 
+  <!-- Updated by Dany93 22 May 2013
+  <animation>
+    <name>Pitch</name>
+    <type>translate</type>
+    <object-name>face</object-name>
+    <property>/instrumentation/attitude-indicator/indicated-pitch-deg</property>
+    <factor>-0.00070 </factor>
+    <min-m> -0.01575 </min-m>
+    <max-m>  0.01575 </max-m>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+  -->
+  
 </PropertyList>
-

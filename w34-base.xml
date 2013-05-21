@@ -11,24 +11,9 @@
 
     <fuel-fraction>1.0</fuel-fraction>
 
-    <startup>
-      <splash-texture>Aircraft/Junkers-W34/w34-splash.png</splash-texture>
-    </startup>
-
-    <sound>
-      <path archive="y">Aircraft/Junkers-W34/Sounds/w34-sound.xml</path>
-    </sound>
-
-    <model>
-      <path archive="y">Aircraft/Junkers-W34/Models/w34.xml</path>
-      <livery>
-        <file type="string">default</file>
-      </livery>
-    </model>
-
-    <multiplay>
+    <multiplay n="0">
       <chat_display>1</chat_display>
-      <generic> 
+      <generic n="0"> 
         <int type="int" n="0">  0 </int>                                           <!--  0 immat -->
         <int type="int" n="1">  0 </int>                                           <!--  1 immat -->
         <int type="int" n="2">  0 </int>                                           <!--  2 immat -->
@@ -49,7 +34,7 @@
     </multiplay>
 
     <help>
-      <title>Staggerwing</title>
+      <title>Junkers W34</title>
       <line>______________________________________________</line>
     </help>
 
@@ -60,33 +45,6 @@
       <engine-volume-low-rpm type="float">0.0</engine-volume-low-rpm>
       <engine-volume-high-rpm type="float">0.0</engine-volume-high-rpm>
     </w34>
-
-    <weight n="0">
-      <name>Pilot</name>
-      <weight-lb>180</weight-lb>
-      <max-lb>240</max-lb>
-      <min-lb>140</min-lb>
-    </weight>
-
-    <weight n="1">
-      <name>Pax</name>
-      <weight-lb>0</weight-lb>
-      <max-lb>240</max-lb>
-      <min-lb>0</min-lb>
-    </weight>
-
-    <weight n="2">
-      <name>Baggage</name>
-      <weight-lb>0</weight-lb>
-      <max-lb>20</max-lb>
-      <min-lb>0</min-lb>
-    </weight>
-
-    <flaps>
-      <setting> 0.0 </setting> <!-- Cruise -->
-      <setting> 0.5 </setting> <!-- Half -->
-      <setting> 1.0 </setting> <!-- Full -->
-    </flaps>
 
     <menubar include="Dialogs/w34-menu.xml"/>
 

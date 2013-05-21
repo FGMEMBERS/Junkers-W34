@@ -55,15 +55,14 @@
     </axis>
   </animation>
 
+  <!-- Updated by Dany93 22 May 2013 -->
   <animation>
     <type>rotate</type>
     <object-name>slipball</object-name>
     <property>instrumentation/slip-skid-ball/indicated-slip-skid</property>
-    <min> -1.1 </min>
-    <max>  1.1 </max>
     <interpolation>
-      <entry><ind> -1.1 </ind><dep> -7.2 </dep></entry>
-      <entry><ind>  1.1 </ind><dep>  7.2 </dep></entry>
+      <entry><ind> -0.15 </ind><dep> -10 </dep></entry>
+      <entry><ind>  0.15 </ind><dep>  10 </dep></entry>
     </interpolation>
     <center>
       <x-m> 0.000 </x-m>
@@ -76,6 +75,5 @@
       <z>  0 </z>
     </axis>
   </animation>
-
+  
 </PropertyList>
-

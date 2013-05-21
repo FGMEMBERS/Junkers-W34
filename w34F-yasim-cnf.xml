@@ -4,23 +4,25 @@
 
   <sim>
 
-    <description>Junkers W34 (YASim)</description>
+    <description>Junkers W34 Floats (YASim)</description>
     <author>Emmanuel BARANGER (3D/FDM)</author>
     <flight-model archive="y">yasim</flight-model>
-    <aero archive="y">w34-yasim</aero>
+    <aero archive="y">w34F-yasim</aero>
+    
+    <type type="string">seaplane</type>
 
     <multiplay n="0">
       <generic n="0">
-        <string n="1" type="string">wheels</string>
+        <string n="1" type="string">floats</string>
       </generic>
     </multiplay>
 
     <startup>
-      <splash-texture>Aircraft/Junkers-W34/Splashs/w34-splash.png</splash-texture>
+      <splash-texture>Aircraft/Junkers-W34/Splashs/w34F-splash.png</splash-texture>
     </startup>
 
     <sound>
-      <path archive="y">Aircraft/Junkers-W34/Sounds/w34-sound.xml</path>
+      <path archive="y">Aircraft/Junkers-W34/Sounds/w34F-sound.xml</path>
     </sound>
 
     <model>
