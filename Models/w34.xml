@@ -45,7 +45,7 @@
   <!-- Une ombre pour OSG -->
   <model>
     <name>OmbreFlotteurs</name>
-    <path>Aircraft/Junkers-W34//Models/shadowF.xml</path>
+    <path>Aircraft/Junkers-W34/Models/shadowF.xml</path>
     <offsets>
       <x-m> -0.38375 </x-m>
       <y-m>  0.00000 </y-m>

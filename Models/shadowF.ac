@@ -7,7 +7,7 @@ name "shadowF"
 loc 0 0 -0
 data 7
 shadowF
-texture "shadow.png"
+texture "shadowF.png"
 texrep 1.000000 1.000000
 crease 30.000001
 numvert 4
