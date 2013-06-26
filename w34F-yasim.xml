@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!-- Junkers W34 Floats   : BARANGER Emmanuel with Melchior script (2013)
+               uptaded by : Tobias HENKEL
 
      Sources              : http://en.wikipedia.org/wiki/Junkers_W_34
 
@@ -191,11 +192,14 @@
   </gear>
 
   <!-- Fuel: 250 lbs -->
-  <tank x="2.50" y=" 1.27" z="-0.42" capacity="500"/>
-  <tank x="1.56" y=" 0.00" z="-0.40" capacity="250"/>
-  <tank x="2.50" y="-1.27" z="-0.42" capacity="500"/>
+  <tank x="2.50" y=" 1.27" z="-0.42" capacity="948.0"/>
+  <tank x="1.56" y=" 0.00" z="-0.40" capacity=" 37.5"/>
+  <tank x="2.50" y="-1.27" z="-0.42" capacity="948.0"/>
+ 
+  <weight x="0.5278" y="0" z="-0.2" mass-prop="/sim/weight[0]/weight-lb"/>
+  <weight x="1.4000" y="0" z="-2.0" mass-prop="/sim/weight[1]/weight-lb"/> 
   
   <!-- Mass displacment -->
-  <ballast x="4" y="0" z="-2" mass="400" />
+  <ballast x="4" y="0" z="-2" mass="120" />
 
 </airplane>

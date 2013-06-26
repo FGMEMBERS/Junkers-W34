@@ -44,8 +44,8 @@
     <object-name>Light</object-name>
     <interpolation>
       <entry><ind>    0 </ind><dep> 0.25 </dep></entry>
-      <entry><ind>   20 </ind><dep> 0.50 </dep></entry>
-      <entry><ind> 1500 </ind><dep> 5.00 </dep></entry>
+      <entry><ind>   220 </ind><dep> 1.60 </dep></entry>
+      <entry><ind> 1500 </ind><dep> 8.00 </dep></entry>
     </interpolation>
   </animation>
 

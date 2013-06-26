@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?> 
+﻿<?xml version="1.0" encoding="ISO-8859-1"?> 
 
 <PropertyList>
 
@@ -378,7 +378,7 @@
     </offsets>
   </model>
 
-  <model>
+ <model>
     <path>Aircraft/Junkers-W34/Models/lights/GreenLight.xml</path>
     <offsets>
       <x-m> -1.94964 </x-m>
@@ -393,6 +393,31 @@
       <x-m> -1.84381 </x-m>
       <y-m>  8.53707 </y-m>
       <z-m>  0.17883 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Junkers-W34/Models/lights/light-cone.xml</path>
+    <offsets>
+      <x-m> -3.2 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m> -0.9 </z-m>
+      <pitch-deg> -7 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Junkers-W34/Models/Interior/Bar/bar.xml</path>
+    <condition>
+      <greater-than>
+        <property>/sim/weight[1]/weight-lb</property>
+        <value>500.000</value>
+      </greater-than>
+    </condition>
+    <offsets>
+      <x-m> -1.50 </x-m>
+      <y-m>  0.40 </y-m>
+      <z-m> -0.20 </z-m>
     </offsets>
   </model>
 

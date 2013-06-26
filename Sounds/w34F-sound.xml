@@ -11,43 +11,32 @@
       <volume>
         <offset>0.4</offset>
       </volume>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </crank>
-
-    <crank>
-      <name>crank</name>
-      <mode>looped</mode>
-      <path>Sounds/cranking.wav</path>
-      <condition>
-        <property>/engines/engine/cranking</property>
-        <not>
-          <property>/engines/engine/running</property>
-        </not>
-      </condition>
       <volume>
-        <offset>0.5</offset>
+        <property>/sim/current-view/internal</property>
+        <offset>1.0</offset>
+        <factor>-0.8</factor>
       </volume>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </crank>
-
-    <crank>
-      <name>cough</name>
-      <path>Sounds/coughing.wav</path>
-      <property>/engines/engine/running</property>
-      <volume>
-        <offset>0.3</offset>
-      </volume>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </crank>
-
+    
     <engine>
       <name>engine</name>
       <mode>looped</mode>
       <path>Aircraft/Junkers-W34/Sounds/running.wav</path>
-      <property>/engines/engine/running</property>
+      <condition>
+        <property>/engines/engine/running</property>
+        <greater-than>
+          <property>/engines/engine/rpm</property>
+          <value>275</value>
+        </greater-than>
+      </condition>
+      <volume>
+        <property>sim/sound/idle-volume</property>
+      </volume>
+      <volume>
+        <property>sim/sound/sim-volume</property>
+      </volume>
       <volume>
         <property>/engines/engine/mp-osi</property>
         <factor>0.00375</factor>
@@ -63,7 +52,7 @@
       <volume>
         <property>/sim/current-view/internal</property>
         <offset>1.0</offset>
-        <factor>-0.7</factor>
+        <factor>-0.45</factor>
       </volume>
       <pitch>
         <property>/engines/engine/rpm</property>
@@ -78,10 +67,17 @@
       <max-dist>1000</max-dist>
     </engine>
 
+    <!-- is not bad but skipt  = your joice ;) =
     <propeller>
       <name>propeller</name>
       <mode>looped</mode>
-      <path>Sounds/turboprop1.wav</path>
+      <path>Aircraft/dhc2/Sound/waspjr.wav</path>
+      <volume>
+        <property>sim/sound/idle-volume</property>
+      </volume>
+      <volume>
+        <property>sim/sound/sim-volume</property>
+      </volume>
       <property>/engines/engine/running</property>
       <volume>
         <property>/orientation/alpha-deg</property>
@@ -91,7 +87,7 @@
       </volume>
       <volume>
         <property>/sim/current-view/internal</property>
-        <factor>0.5</factor>
+        <factor>-0.7</factor>
       </volume>
       <pitch>
         <property>/engines/engine/mp-osi</property>
@@ -105,9 +101,10 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </propeller>
+    -->
 
     <rumble>
-      <name>rumble</name>
+      <name>water</name>
       <mode>looped</mode>
       <path>Sounds/wave.wav</path>
       <condition>
@@ -117,7 +114,21 @@
           <property>/gear/gear[2]/wow</property>
           <property>/gear/gear[3]/wow</property>
         </or>
+        <not>
+          <and>
+            <greater-than>
+              <property>/sim/model/door-positions/crew/position-norm/</property>
+              <value>0.0051</value>
+            </greater-than>
+            <property>/sim/current-view/internal</property>
+          </and>
+        </not>
       </condition>
+      <volume>
+        <property>/sim/current-view/internal</property>
+        <offset>1.0</offset>
+        <factor>-0.60</factor>
+      </volume>
       <volume>
         <property>/velocities/airspeed-kt</property>
         <type>log</type>
@@ -125,8 +136,9 @@
       </volume>
     </rumble>
 
-    <squeal>
-      <name>water</name>
+    <door-open>
+      <name>water-do</name>
+      <mode>looped</mode>
       <path>Sounds/wave.wav</path>
       <condition>
         <or>
@@ -135,83 +147,48 @@
           <property>/gear/gear[2]/wow</property>
           <property>/gear/gear[3]/wow</property>
         </or>
-      </condition>
-      <volume>
-        <property>/velocities/speed-down-fps</property>
-        <factor>0.5</factor>
-        <max>1.0</max>
-      </volume>
-      <volume>
-        <property>/velocities/speed-down-fps</property>
-        <factor>0.5</factor>
-        <max>1.0</max>
-      </volume>
-    </squeal>
-
-    <squeal>
-      <name>squeal</name>
-      <path>Sounds/squeal.wav</path>
-      <condition>
-        <or>
-          <property>/gear/gear[0]/wow</property>
-          <property>/gear/gear[1]/wow</property>
-          <property>/gear/gear[2]/wow</property>
-        </or>
-      </condition>
-      <volume>
-        <property>/velocities/speed-down-fps</property>
-        <factor>0.5</factor>
-        <max>1.0</max>
-      </volume>
-      <volume>
-        <property>/velocities/airspeed-kt</property>
-        <factor>0.01</factor>
-        <max>1.0</max>
-      </volume>
-      <volume>
-        <internal>dt_stop</internal>
-        <factor>0.05</factor>
-        <max>1.0</max>
-      </volume>
-      <pitch>
-        <property>/velocities/airspeed-kt</property>
-        <factor>0.0025</factor>
-        <offset>1.2</offset>
-      </pitch>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </squeal>
- 
-    <fuel-pump>
-      <name>fuel pump</name>
-      <mode>looped</mode>
-      <path>Sounds/overspeed.wav</path>
-      <condition>
         <and>
           <greater-than>
-            <property>systems/electrical/outputs/fuel-pump</property>
-            <value>8</value>
+            <property>/sim/model/door-positions/crew/position-norm/</property>
+            <value>0.0051</value>
           </greater-than>
+          <property>/sim/current-view/internal</property>
+        </and>
+      </condition>
+      <volume>
+        <property>/velocities/airspeed-kt</property>
+        <type>log</type>
+        <factor>0.25</factor>
+      </volume>
+    </door-open>
+
+    <fuel-pump>
+      <name>Fuel P on</name>
+      <mode>looped</mode>
+      <path>Sounds/stall.wav</path>
+      <condition>
+        <and>
+          <property>controls/electric/battery-switch</property>
+          <property>controls/fuel/tank[2]/pump</property>
           <less-than>
             <property>/engines/engine/rpm</property>
             <value>1200</value>
-          </less-than>  
-        </and> 
+          </less-than>
+          <property>/sim/current-view/internal</property>
+        </and>
       </condition>
       <volume>
-        <property>/sim/sound/fuel_pump_volume</property>
+        <factor>0.12</factor>
       </volume>
       <pitch>
-        <property>controls/engines/engine[0]/fuel-pump</property>
-        <offset>0.0</offset>
-        <factor>1.75</factor>
+        <property>/engines/engine/running</property>
+        <factor>0.0035</factor>
+        <offset>0.25</offset>
       </pitch>
-      <reference-dist>60.0</reference-dist>
-      <max-dist>2000.0</max-dist>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
+      <reference-dist>5</reference-dist>
+      <max-dist>5</max-dist>
     </fuel-pump>
-     
+
     <wind>
       <name>wind</name>
       <mode>looped</mode>
@@ -225,10 +202,10 @@
         <max>1.0</max>
       </volume>
       <volume>
-         <property>/velocities/airspeed-kt</property>
-          <factor>0.0015</factor>
-         <min>0.0</min>
-         <max>0.25</max>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.0015</factor>
+        <min>0.0</min>
+        <max>0.25</max>
       </volume>
       <pitch>
         <property>/velocities/airspeed-kt</property>
@@ -240,7 +217,80 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </wind>
- 
+
+    <wint2>
+      <name>close-door</name>
+      <mode>looped</mode>
+      <path>Sounds/wind.wav</path>
+      <condition>
+        <and>
+          <greater-than>
+            <property>/sim/model/door-positions/crew/position-norm/</property>
+            <value>0.1</value>
+          </greater-than>
+          <property>/sim/current-view/internal</property>
+        </and>
+      </condition> 
+      <property>/velocities/airspeed-kt</property>
+      <volume>
+        <property>/position/altitude-ft</property>
+        <factor>-0.000015</factor>
+        <offset>1.0</offset>
+        <min>0.1</min>
+        <max>1.5</max>
+      </volume>
+      <volume>
+        <property>velocities/airspeed-kt</property>
+         <factor>0.0061</factor>
+        <min>-30</min>
+        <max>2</max>
+      </volume>
+      <pitch>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.0035</factor>
+        <offset>1.25</offset>
+      </pitch>
+      <reference-dist>60.0</reference-dist>
+      <max-dist>2000.0</max-dist>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </wint2>
+
+    <splash>
+      <name>splash</name>
+      <mode>looped</mode>
+      <path>Sounds/wind.wav</path>
+      <condition>
+        <or>
+          <property>/gear/gear[0]/wow</property>
+          <property>/gear/gear[1]/wow</property>
+          <property>/gear/gear[2]/wow</property>
+        </or>
+      </condition> 
+      <volume>
+        <property>/position/altitude-ft</property>
+        <factor>-0.000015</factor>
+        <offset>1.0</offset>
+        <min>0.1</min>
+        <max>1.0</max>
+      </volume>
+      <volume>
+         <property>velocities/groundspeed-kt</property>
+          <factor>0.05</factor>
+         <min>0.0</min>
+         <max>0.25</max>
+      </volume>
+      <pitch>
+        <property>velocities/groundspeed-kt</property>
+        <factor>0.0035</factor>
+        <offset>1.25</offset>
+      </pitch>
+      <reference-dist>60.0</reference-dist>
+      <max-dist>2000.0</max-dist>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </splash>
+
     <stall>
       <name>stall</name>
       <mode>looped</mode>
@@ -279,7 +329,7 @@
         <property>controls/electric/battery-switch</property>
       </condition>
       <volume> 
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
     
@@ -292,7 +342,7 @@
         </not>
       </condition>
       <volume> 
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
 
@@ -303,7 +353,7 @@
         <property>controls/electric/alternator-switch</property>
       </condition>
       <volume> 
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
     
@@ -316,7 +366,7 @@
         </not>
       </condition>
       <volume> 
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
 
@@ -327,7 +377,7 @@
         <property>controls/engines/engine/fuel-pump</property>
       </condition>
       <volume> 
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
     
@@ -340,7 +390,7 @@
         </not>
       </condition>
       <volume> 
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
 
@@ -351,7 +401,7 @@
        <property>controls/switches/nav-lights</property>
       </condition>
       <volume> 
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
     
@@ -364,7 +414,7 @@
        </not>
       </condition>
       <volume> 
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
  
@@ -375,7 +425,7 @@
         <property>controls/switches/landing-light</property>
       </condition>
       <volume>
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
       
@@ -388,7 +438,7 @@
         </not>
       </condition>
       <volume>
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
 
@@ -399,7 +449,7 @@
         <property>instrumentation/turn-indicator/serviceable</property>
       </condition>
       <volume> 
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
     
@@ -412,7 +462,7 @@
         </not>
       </condition>
       <volume> 
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
   
@@ -423,7 +473,7 @@
         <property>controls/switches/flashing-beacon</property>
       </condition>
       <volume> 
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
     
@@ -436,7 +486,7 @@
        </not>
       </condition>
       <volume> 
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
 
@@ -447,7 +497,7 @@
         <property>controls/anti-ice/pitot-heat</property>
       </condition>
       <volume> 
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
  
@@ -460,7 +510,7 @@
        </not>
       </condition>
       <volume> 
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
       
@@ -471,7 +521,7 @@
         <property>controls/switches/panel-lights</property>
       </condition>
       <volume> 
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
  
@@ -484,7 +534,7 @@
        </not>
       </condition>
       <volume> 
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
       
@@ -497,7 +547,7 @@
        </not>
       </condition>
       <volume> 
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
 	 
@@ -511,7 +561,7 @@
        </equals>
       </condition>
       <volume> 
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
   
@@ -525,7 +575,7 @@
        </equals>
       </condition>
       <volume> 
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
   
@@ -539,7 +589,7 @@
        </equals>
       </condition>
       <volume> 
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
 
@@ -550,7 +600,7 @@
         <property>controls/switches/flashing-beacon</property>
       </condition>
       <volume> 
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
     
@@ -563,7 +613,7 @@
        </not>
       </condition>
       <volume> 
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
 
@@ -574,7 +624,7 @@
         <property>controls/switches/strobe-lights</property>
       </condition>
       <volume> 
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
     
@@ -587,7 +637,7 @@
        </not>
       </condition>
       <volume> 
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
     
@@ -599,7 +649,7 @@
         <property>controls/switches/master-avionics</property>
       </condition>
       <volume> 
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
  
@@ -612,7 +662,7 @@
        </not>
       </condition>
       <volume> 
-        <factor>1.0</factor>
+        <factor>0.08</factor>
       </volume>
     </click>
     -->
@@ -624,7 +674,7 @@
         <property>controls/engines/engine/primer-pump</property>
       </condition>
       <volume> 
-        <factor>0.1</factor>
+        <factor>0.08</factor>
       </volume>
     </squish>
  
@@ -637,7 +687,7 @@
        </not>
       </condition>
       <volume> 
-        <factor>0.1</factor>
+        <factor>0.08</factor>
       </volume>
     </squish>
 

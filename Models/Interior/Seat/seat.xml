@@ -9,7 +9,22 @@
     <object-name>seat1</object-name>
     <object-name>seat2</object-name>
     
-    <!-- Objets transparents -->
+    <!-- Objets lumin -->
   </animation>
 
+  <animation>
+    <type>material</type> 
+    <object-name>seat1</object-name>
+    <object-name>seat2</object-name>
+    <condition>
+      <property>controls/lighting/int-light</property>
+    </condition>
+    <emission>	
+      <red>   0.150 </red>	
+      <green> 0.120 </green>	
+      <blue>  0.122 </blue>
+    </emission>
+    <!-- texture>Light_lit.png</texture -->
+  </animation>
+  
 </PropertyList>

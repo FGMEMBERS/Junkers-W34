@@ -6,7 +6,7 @@
     
     <model>
       <livery>
-        <name type="string">CanadAirLTD</name>
+        <name type="string">Floats CanadAirLTD</name>
         <texture>Liveries/CanadAirLTD.png</texture>
         <diffuse>
           <red>   1 </red>

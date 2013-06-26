@@ -61,7 +61,13 @@
     <type>select</type>
     <object-name>Light</object-name>
     <condition>
-      <property>controls/lighting/nav-lights</property>
+      <and>
+        <property>controls/lighting/pos-light</property>
+        <or>
+          <property>controls/electric/battery-switch</property>
+          <property>engines/engine/running</property>
+        </or>
+      </and>
     </condition>
   </animation>
 

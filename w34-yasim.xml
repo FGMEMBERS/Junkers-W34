@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<!-- Junkers F13          : BARANGER Emmanuel with Melchior script (2013)
+<!-- Junkers W34         : BARANGER Emmanuel with Melchior script (2013)
 
-Sources              : http://en.wikipedia.org/wiki/Junkers_W_34
+     Sources              : http://en.wikipedia.org/wiki/Junkers_W_34
 
      Wingspan             : 17.75 m  ( 58 ft 2 3/4 in )
      Length               : 10.27 m  ( 33 ft 8 1/4 in )
@@ -140,12 +140,12 @@ Sources              : http://en.wikipedia.org/wiki/Junkers_W_34
         <control-input axis="/controls/flight/rudder" control="STEER" src0="-1.0" src1="1.0" dst0="0.5" dst1="-0.5"/>
   </gear>
 
-  <!-- Fuel: 250 lbs -->
-  <tank x="2.50" y=" 1.27" z="-0.42" capacity="500"/>
-  <tank x="1.56" y=" 0.00" z="-0.40" capacity="250"/>
-  <tank x="2.50" y="-1.27" z="-0.42" capacity="500"/>
-  
-  <!-- Mass displacment -->
-  <ballast x="4" y="0" z="-2" mass="400" />
+  <!-- Fuel: 1520 lbs -->
+  <tank x="2.50" y=" 1.27" z="-0.42" capacity="948"/>
+<tank x="1.56" y=" 0.00" z="-0.40" capacity="37.5"/>
+<tank x="2.50" y="-1.27" z="-0.42" capacity="948"/>
+<weight x="0.5278" y="0.0" z="-0.2" mass-prop="/sim/weight[0]/weight-lb"/>
+<weight x="1.4" y="0" z="-2" mass-prop="/sim/weight[1]/weight-lb"/>
+<!-- Mass displacment --><ballast x="4" y="0" z="-2" mass="120"/>
 
 </airplane>

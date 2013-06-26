@@ -78,7 +78,7 @@
       <max-dist>1000</max-dist>
     </engine>
 
-    <propeller>
+    <!-- need to be updates ;) <propeller>
       <name>propeller</name>
       <mode>looped</mode>
       <path>Sounds/turboprop1.wav</path>
@@ -104,7 +104,7 @@
       <max-dist>2000.0</max-dist>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
-    </propeller>
+    </propeller -->
 
     <rumble>
       <name>rumble</name>
@@ -220,6 +220,44 @@
       <max-dist>1000</max-dist>
     </wind>
  
+    <wint2>
+      <name>close-door</name>
+      <mode>looped</mode>
+      <path>Sounds/wind.wav</path>
+      <condition>
+        <and>
+          <greater-than>
+            <property>/sim/model/door-positions/crew/position-norm/</property>
+            <value>0.1</value>
+          </greater-than>
+          <property>/sim/current-view/internal</property>
+        </and>
+      </condition>
+      <property>/velocities/airspeed-kt</property>
+      <volume>
+        <property>/position/altitude-ft</property>
+        <factor>-0.000015</factor>
+        <offset>1.0</offset>
+        <min>0.1</min>
+        <max>1.5</max>
+      </volume>
+      <volume>
+        <property>velocities/airspeed-kt</property>
+        <factor>0.0061</factor>
+        <min>-30</min>
+        <max>2</max>
+      </volume>
+      <pitch>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.0035</factor>
+        <offset>1.25</offset>
+      </pitch>
+      <reference-dist>60.0</reference-dist>
+      <max-dist>2000.0</max-dist>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </wint2>
+    
     <stall>
       <name>stall</name>
       <mode>looped</mode>

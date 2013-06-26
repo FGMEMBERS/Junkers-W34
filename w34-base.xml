@@ -5,11 +5,9 @@
   <sim include="Nasal/views.xml">
 
     <description>Junkers W34 (YASim)</description>
-    <author>BARANGER Emmanuel (3D/FDM)</author>
+    <author>Emmanuel BARANGER (3D/FDM), Tobias HENKEL (PANEL/Liveries)</author>
     <aircraft-version>0.2</aircraft-version>
     <status>Alpha</status>
-
-    <fuel-fraction>1.0</fuel-fraction>
 
     <multiplay n="0">
       <chat_display>1</chat_display>
@@ -33,17 +31,78 @@
       </generic>
     </multiplay>
 
+    <model>
+      <manual>
+        <total-pages type="int">5</total-pages>
+        <x-offset>0</x-offset>
+        <y-offset>0</y-offset>
+        <z-offset>0</z-offset>
+      </manual>
+    </model>
+
     <help>
-      <title>Junkers W34</title>
-      <line>______________________________________________</line>
+      <title>Junkers W34 </title>
+      <line>     Bushpilot Briefing </line>
+      <line>_______________________</line>
+      <line></line>
+      <line>1. Hauptschalter Ein</line>
+      <line>2. Magnetschalter Ein</line>
+      <line>3. Treibstoffpumpe Ein</line>
+      <line>4. Drosselklappe Auf</line>
+      <line>5. Starter 5sec lang halten </line>
+      <line>_______________________</line>  
+      <line></line>
+      <line></line>
+      <line>Gemisch Einstellung</line>
+      <line>   (mixture settings)</line>
+      <line></line>
+      <line>takeoff  -6.5-        " * "</line>
+      <line>cruise   -2.5-        " n "</line>
+      <line>landing -1.5-        " N "</line>
+      <line></line>
+      <line>Hoehengas</line>
+      <line>   (alt-mix)</line>
+      <line></line>
+      <line>10.000ft - 4.5 -     " = "</line>
+      <line>20.000ft - 3.7 -     "  !  "</line>
+      <line>30.000ft - 2.6 -     " % "</line>
+      <line>40.000ft -1.85-     " $  "</line>
+      <line>_______________________</line>
+      <line></line>
+      <line>Rolltrim                " ,  . "</line>
+      <line>CabinDoor           " d "</line>
+      <line>Fix Door              " D "</line>
+      <line>Landlight             " L "</line>
     </help>
 
+    <!--
+    <systems>
+      <electrical>
+        <path>Aircraft/Generic/generic-electrical.xml</path>
+      </electrical>
+    </systems>
+    -->
+ 
+    <weight n="0">
+      <name>Crew + Passengers</name>
+      <weight-lb>175</weight-lb>
+      <max-lb>1200</max-lb>
+      <min-lb>120</min-lb>
+    </weight>
+
+    <weight n="1">
+      <name>Cargo !!!max 7050 lb</name>
+      <weight-lb>0</weight-lb>
+      <max-lb>2500</max-lb>
+      <min-lb>0</min-lb>
+    </weight>
+
     <w34>
-      <state type="int">0</state>
-      <airspeed-kmh type="float">0.0</airspeed-kmh>
-      <engine-rpm type="float">0.0</engine-rpm>
-      <engine-volume-low-rpm type="float">0.0</engine-volume-low-rpm>
-      <engine-volume-high-rpm type="float">0.0</engine-volume-high-rpm>
+      <state type="int">5</state>
+      <airspeed-kmh type="float">0</airspeed-kmh>
+      <engine-rpm type="float">0</engine-rpm>
+      <engine-volume-low-rpm type="float">0</engine-volume-low-rpm>
+      <engine-volume-high-rpm type="float">0</engine-volume-high-rpm>
     </w34>
 
     <menubar include="Dialogs/w34-menu.xml"/>
@@ -54,21 +113,59 @@
     <keyboard include="Nasal/w34-keyboard.xml"/>
   </input>
 
-  <engines>
-    <engine>
-      <rpm type="float">0.0</rpm>
-    </engine>
-  </engines>
+  <!-- Set -->
+  <consumables>
+    <fuel>
+      <tank n="0">
+        <name>L wing</name>
+        <selected type="bool">false</selected>
+      </tank>
+      <tank n="1">
+        <name>backup</name>
+        <selected type="bool">false</selected>
+      </tank>
+      <tank n="2">
+        <name>R wing</name>
+        <selected type="bool">false</selected>
+      </tank>
+    </fuel>
+  </consumables>
+  
+  <controls>
+    <electric>
+      <battery-switch type="bool">0</battery-switch>
+      <avionics-switch type="bool">0</avionics-switch>
+      <external-power type="bool">0</external-power>
+      <engine></engine>
+    </electric>
+    <engines>
+      <engine>
+        <mixture>0.075</mixture>
+        <generator>true</generator>
+        <master-bat>false</master-bat>
+        <fuel-pump>true</fuel-pump>
+      </engine>
+    </engines>
+  </controls>
+  
+  <environment>
+    <turbulence>
+      <use-cloud-turbulence>true</use-cloud-turbulence>
+    </turbulence>
+  </environment>
 
   <nasal>
     <doors>
       <file>Aircraft/Junkers-W34/Nasal/doors.nas</file>
     </doors>
     <w34>
+      <file>Aircraft/Junkers-W34/Nasal/Electrical.nas</file>
       <file>Aircraft/Junkers-W34/Nasal/liveries.nas</file>
       <file>Aircraft/Junkers-W34/Nasal/light.nas</file>
     </w34>
+    <manual>
+      <file>Aircraft/Junkers-W34/Manual/doc.nas</file>
+    </manual>
   </nasal>
 
 </PropertyList>
-

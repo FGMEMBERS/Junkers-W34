@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<PropertyList>
-
+ <PropertyList>
+   
   <default>
+    
     <menu n="10">
       <label>Junkers W34</label>
       <enabled type="bool">true</enabled>
+      <item>
+        <label>Lights</label>
+        <binding>
+          <command>nasal</command>
+          <script>    
+            var lights = gui.Dialog.new("sim/gui/dialogs/lights/dialog", "Aircraft/Junkers-W34/Dialogs/lights-dlg.xml");
+            lights.open();
+          </script>
+        </binding>
+      </item>
       <item>
         <label>Select Livery</label>
         <binding>
@@ -13,7 +24,14 @@
           <script>aircraft.livery.dialog.toggle()</script>
         </binding>
       </item>
-<!--
+      <item>
+        <label>Manual</label>
+        <binding>
+          <command>property-toggle</command>
+          <property>sim/model/manual/enabled</property>
+        </binding>
+      </item>
+      <!--
       <item>
         <label>Immatriculation</label>
         <binding>
@@ -21,9 +39,9 @@
           <script>navion.immat_dialog.toggle()</script>
         </binding>
       </item>
--->
+      -->
     </menu>
+    
   </default>
 
 </PropertyList>
-

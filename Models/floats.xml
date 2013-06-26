@@ -16,7 +16,7 @@
     <object-name>floats</object-name>
     <object-name>floats2</object-name>
     <object-name>direction2</object-name>
-    
+
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
@@ -25,7 +25,6 @@
       <green-prop>specular/green</green-prop>
       <blue-prop>specular/blue</blue-prop>
     </specular>
-
     <emission>
       <red-prop>emission/red</red-prop>
       <green-prop>emission/green</green-prop>
@@ -69,60 +68,59 @@
     </axis>
   </animation>
 
-  <!-- Trainee gauche -->
+  <!-- Trainee gauche  -->
   <model>
     <path>Aircraft/Junkers-W34/Models/Effects/wakes/wakeGA.xml</path>
     <offsets>
-      <x-m>  1.98959 </x-m>
+      <x-m>  1.8959 </x-m>
       <y-m>  1.66597 </y-m>
       <z-m> -2.85789 </z-m>
-      <pitch-deg> -45 </pitch-deg>
+      <pitch-deg> -38 </pitch-deg>
     </offsets>
-  </model> 
+  </model>
 
-  <!-- Trainee droite -->
+  <!-- Trainee droite  -->
   <model>
     <path>Aircraft/Junkers-W34/Models/Effects/wakes/wakeDA.xml</path>
     <offsets>
-      <x-m>  1.98959 </x-m>
+      <x-m>  1.8959 </x-m>
       <y-m> -1.66597 </y-m>
       <z-m> -2.85789 </z-m>
-      <pitch-deg> -45 </pitch-deg>
+      <pitch-deg> -38 </pitch-deg>
     </offsets>
-  </model> 
+  </model>
 
-  <!-- Eclaboussures, avant gauche -->
+  <!-- Eclaboussures, avant gauche  -->
   <model>
     <path>Aircraft/Junkers-W34/Models/Effects/wakes/jetGA.xml</path>
     <offsets>
       <x-m> -5.48998 </x-m>
       <y-m>  1.66597 </y-m>
       <z-m> -2.94733 </z-m>
-      <pitch-deg> -90 </pitch-deg>
+      <pitch-deg> -35 </pitch-deg>
     </offsets>
-  </model> 
+  </model>
 
-  <!-- Eclaboussures, avant droite -->
+  <!-- Eclaboussures, avant droite  -->
   <model>
     <path>Aircraft/Junkers-W34/Models/Effects/wakes/jetDA.xml</path>
     <offsets>
       <x-m> -5.48998 </x-m>
       <y-m> -1.66597 </y-m>
       <z-m> -2.94733 </z-m>
-      <pitch-deg> -90 </pitch-deg>
+      <pitch-deg> -35 </pitch-deg>
     </offsets>
-  </model> 
+  </model>
 
-  <!-- Eclaboussures, centre gauche -->
+  <!-- Eclaboussures, centre gauche  -->
   <model>
     <path>Aircraft/Junkers-W34/Models/Effects/wakes/jetmGA.xml</path>
     <offsets>
       <x-m> -2.56000 </x-m>
       <y-m> -1.66597 </y-m>
       <z-m> -3.08489 </z-m>
-      <pitch-deg> -90 </pitch-deg>
     </offsets>
-  </model> 
+  </model>
 
   <!-- Eclaboussures, centre droite -->
   <model>
@@ -131,7 +129,6 @@
       <x-m> -2.56000 </x-m>
       <y-m>  1.66597 </y-m>
       <z-m> -3.08489 </z-m>
-      <pitch-deg> -90 </pitch-deg>
     </offsets>
   </model>
 

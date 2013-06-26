@@ -3,7 +3,7 @@
 <PropertyList>
 
   <particlesystem>
-    <name>JetD</name>
+    <name>JetG</name>
 
     <texture>wake.png</texture>
 
@@ -11,7 +11,15 @@
     <lighting>true</lighting>
 
     <condition>
-      <property>gear/gear[5]/wow</property>
+      <and>
+        <greater-than>
+          <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+          <value>19</value>
+        </greater-than>
+        <or>
+          <property>gear/gear[4]/wow</property>
+        </or>
+      </and>
     </condition>
 
     <attach>world</attach>
@@ -21,13 +29,15 @@
     </placer>
 
     <shooter>
-      <theta-min-deg>84</theta-min-deg>
-      <theta-max-deg>86</theta-max-deg>
+      <!-- <property>instrumentation/airspeed-indicator/indicated-speed-kt</property> -->
+      <theta-min-deg>74</theta-min-deg>
+      <theta-max-deg>96</theta-max-deg>
       <phi-min-deg>-1.5</phi-min-deg>
       <phi-max-deg>1.5</phi-max-deg>
       <speed-mps>
-        <value>10</value>
-        <spread>2.5</spread>
+         <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+         <factor>2.5</factor>
+         <spread>2.5</spread>
       </speed-mps>
       <rotation-speed>
         <x-min-deg-sec>5</x-min-deg-sec>
@@ -41,7 +51,7 @@
 
     <counter>
       <particles-per-sec>
-        <value>30</value>
+        <value>42</value>
         <spread>5</spread>
       </particles-per-sec>
     </counter>
@@ -51,46 +61,30 @@
     <particle>
       <start>
         <color>
-          <red>
-            <value>1.0</value>
-          </red>
-          <green>
-            <value>1.0</value>
-          </green>
-          <blue>
-            <value>1.0</value>
-          </blue>
-          <alpha>
-            <value>0.5</value>
-          </alpha>
+          <red><value>   1.0 </value></red>
+          <green><value> 1.0 </value></green>
+          <blue><value>  1.0 </value></blue>
+          <alpha><value> 0.5 </value></alpha>
         </color>
         <size>
-          <value>0.5</value>
+          <value>0.8</value>
         </size>
       </start>
 
       <end>
         <color>
-          <red>
-            <value>1.0</value>
-          </red>
-          <green>
-            <value>1.0</value>
-          </green>
-          <blue>
-            <value>1.0</value>
-          </blue>
-          <alpha>
-            <value>1.0</value>
-          </alpha>
+          <red><value>   1 </value></red>
+          <green><value> 1 </value></green>
+          <blue><value>  1 </value></blue>
+          <alpha><value> 1 </value></alpha>
         </color>
         <size>
-          <value>0.2</value>
+          <value>1.2</value>
         </size>
       </end>
 
       <life-sec>
-        <value>0.5</value>
+        <value>0.8</value>
       </life-sec>
 
       <mass-kg>0.20</mass-kg>
@@ -106,4 +100,3 @@
   </particlesystem>
 
 </PropertyList>
-

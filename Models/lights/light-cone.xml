@@ -41,7 +41,13 @@
     <object-name>Cone-texture</object-name>
     <object-name>Light</object-name>
     <condition>
-      <property>/controls/lighting/landing-lights</property>
+      <and>
+        <property>controls/lighting/land</property>
+        <or>
+          <property>controls/electric/battery-switch</property>
+          <property>engines/engine/running</property>
+        </or>
+      </and>
     </condition>
   </animation>
 
