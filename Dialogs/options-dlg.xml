@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+   
+  <name>options-dlg</name>
+  <layout>vbox</layout>
+   
+  <text>
+    <label>Ju34 Options</label>
+  </text>
+   
+  <hrule />
+   
+  <group>
+    <layout>vbox</layout> 
+     
+    <checkbox>
+      <label>Start Setup</label>
+      <property>controls/electric/battery-switch</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/switcher/battery</property>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/controls/engines/engine[0]/mixture</property>
+        <value>0.77175</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/controls/engines/engine[0]/magnetos</property>
+        <value>3</value>
+      </binding>     
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/fuel/tank[2]/pump</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>consumables/fuel/tank[2]/selected</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/fuel/tank[0]/pump</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>consumables/fuel/tank[0]/selected</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>engines/engine/fuel-pump</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/switcher/pump3</property>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/controls/engines/engine[0]/throttle</property>
+        <value>1</value>
+      </binding>       
+      <text>push starter</text>
+      <live>true</live>
+    </checkbox>
+     
+    <checkbox>
+      <label>Cabin seats</label>
+      <property>sim/model/seats</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+      <live>true</live>
+    </checkbox> 
+  </group>
+  
+  <hrule />
+     
+  <group>
+    <layout>vbox</layout>
+     
+    <button>
+      <legend>Close</legend>
+      <default>true</default>
+      <key>Esc</key>
+      <padding>10</padding>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+  </group>
+     
+</PropertyList>

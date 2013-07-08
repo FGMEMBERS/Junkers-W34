@@ -190,6 +190,35 @@
     </offsets>
   </model>
 
+  <animation>
+    <type>material</type>
+    <object-name>bloc</object-name>
+    <object-name>echappes</object-name>
+    <object-name>moteurlow</object-name>
+    <object-name>caches</object-name>
+    <object-name>cames</object-name>
+    <object-name>pistons</object-name>
+    <object-name>ecrous</object-name>
+    <object-name>bougies</object-name>
+    <object-name>tuyaux</object-name>
+    <object-name>souflets</object-name>
+    
+    <property-base>sim/model/livery-engine</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>Engine/engine.png</texture>
+    <specular>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
+    </specular>
+
+    <emission>
+      <red-prop>emission/red</red-prop>
+      <green-prop>emission/green</green-prop>
+      <blue-prop>emission/blue</blue-prop>
+    </emission>
+  </animation>
+
   <!-- L'hélice -->
   <animation>
     <name>HeliceComplete</name>
@@ -397,28 +426,30 @@
   </model>
 
   <model>
-    <path>Aircraft/Junkers-W34/Models/lights/light-cone.xml</path>
+    <path>Aircraft/Junkers-W34/Models/LandingLight/landinglight.xml</path>
     <offsets>
-      <x-m> -3.2 </x-m>
-      <y-m>  0.0 </y-m>
-      <z-m> -0.9 </z-m>
-      <pitch-deg> -7 </pitch-deg>
+      <x-m> -3.05312 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.82796 </z-m>
     </offsets>
   </model>
 
+  <!--
   <model>
-    <path>Aircraft/Junkers-W34/Models/Interior/Bar/bar.xml</path>
+    <path>...</path>
     <condition>
       <greater-than>
         <property>/sim/weight[1]/weight-lb</property>
         <value>500.000</value>
       </greater-than>
-    </condition>
+    </condition>    
     <offsets>
       <x-m> -1.50 </x-m>
       <y-m>  0.40 </y-m>
       <z-m> -0.20 </z-m>
+      <pitch-deg> 0 </pitch-deg>
     </offsets>
   </model>
+  -->
 
 </PropertyList>

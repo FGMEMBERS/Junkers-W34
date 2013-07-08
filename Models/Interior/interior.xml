@@ -42,7 +42,8 @@
     <object-name>intvitres</object-name>
     <object-name>intvitreporte</object-name>
   </effect>
-
+  
+  <!-- Cabin Light animation -->
   <animation>
     <type>material</type> 
     <object-name>interieur</object-name>
@@ -52,49 +53,59 @@
     <object-name>inttourvitreporte</object-name>
     <object-name>intporte</object-name>
     <object-name>planchet</object-name>
-    <condition><property>controls/lighting/int-light</property>
+    <condition>
+      <property>controls/lighting/int-light</property>
     </condition>
     <emission>
       <red>   0.172 </red>
       <green> 0.160 </green>
       <blue>  0.148 </blue>
     </emission>
-    <!-- texture>Light_lit.png</texture -->
   </animation>
-
+  
   <!-- Pilote -->
   <model>
     <path>Aircraft/Junkers-W34/Models/Pilot/pilot.xml</path>
     <offsets>
-      <x-m> -2.71000 </x-m>
-      <y-m> -0.31088 </y-m>
-      <z-m>  0.40000 </z-m>
+      <x-m> -2.7900 </x-m>
+      <y-m> -0.3388 </y-m>
+      <z-m>  0.3500 </z-m>
     </offsets>
-  </model>
+  </model> 
   
+  <!-- Test Pilot 
+  <model>
+    <path>Aircraft/Junkers-W34/Models/Pilot/test/testpilot.xml</path>
+    <offsets>
+      <x-m> -2.42000 </x-m>
+      <y-m> -0.31088 </y-m>
+      <z-m>  0.21100 </z-m>
+    </offsets>
+  </model> -->
+
   <!-- Pilot seat -->
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Seat/seat.xml</path>
     <offsets>
-      <x-m> -2.43398 </x-m>
-      <y-m> -0.32541 </y-m>
-      <z-m>  0.33948 </z-m>
+      <x-m> -2.5200 </x-m>
+      <y-m> -0.3200 </y-m>
+      <z-m>  0.3348 </z-m>
     </offsets>
   </model>
-  
+
   <!-- Copilot seat -->
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Seat/seat.xml</path>
     <offsets>
-      <x-m> -2.43398 </x-m>
+      <x-m> -2.53398 </x-m>
       <y-m>  0.32541 </y-m>
       <z-m>  0.33948 </z-m>
     </offsets>
   </model>
-  
+
   <!-- Pilot pedals -->
   <model>
-    <path>Aircraft/Junkers-W34/Models/Interior/Panel/pedals/pedals.xml</path>
+    <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/pedals/pedals.xml</path>
     <offsets>
       <x-m> -3.2000 </x-m>
       <y-m> -0.3225 </y-m>
@@ -104,7 +115,7 @@
 
   <!-- Copilot pedals -->
   <model>
-    <path>Aircraft/Junkers-W34/Models/Interior/Panel/pedals/pedals.xml</path>
+    <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/pedals/pedals.xml</path>
     <offsets>
       <x-m> -3.200 </x-m>
       <y-m>  0.315 </y-m>
@@ -112,13 +123,13 @@
     </offsets>
   </model>
 
-  <!-- Pilot yoke -->
+ <!-- Pilot yoke -->
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/Yoke/yoke.xml</path>
     <offsets>
-      <x-m> -2.88144 </x-m>
-      <y-m> -0.29050 </y-m>
-      <z-m> -0.07960 </z-m>
+      <x-m> -2.9654 </x-m>
+      <y-m> -0.3225 </y-m>
+      <z-m> -0.1200 </z-m>
     </offsets>
   </model>
 
@@ -126,9 +137,9 @@
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/Yoke/yoke.xml</path>
     <offsets>
-      <x-m> -2.88144 </x-m>
-      <y-m>  0.29050 </y-m>
-      <z-m> -0.07960 </z-m>
+      <x-m> -2.9654 </x-m>
+      <y-m>  0.3225 </y-m>
+      <z-m> -0.1200 </z-m>
     </offsets>
   </model>
 
@@ -153,6 +164,14 @@
     </offsets>
   </model>
 
+  <!-- cabin seats -->
+  <model>
+    <path>Aircraft/Junkers-W34/Models/Interior/Seat/cabin-seats.xml</path>
+    <condition>
+      <property>sim/model/seats</property>
+    </condition>
+  </model> 
+  
   <!-- Animation des portes -->
   <animation>
     <name>IntLaPorteGauche</name>

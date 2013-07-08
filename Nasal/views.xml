@@ -21,11 +21,11 @@
   </view>
 
   <view n="102">
-    <name>surfer</name>
+    <name>seagull</name>
     <internal archive="y">true</internal>
     <type>lookfrom</type>
     <config>
-      <internal type="bool">false</internal>
+    <internal type="bool">false</internal>
       <from-model type="bool">false</from-model>
       <from-model-idx type="int">0</from-model-idx>
       <eye-lat-deg-path>/position/latitude-deg</eye-lat-deg-path>
@@ -37,10 +37,10 @@
       <at-model type="bool">false</at-model>
       <at-model-idx type="int">0</at-model-idx>
       <ground-level-nearplane-m type="double">0.1f</ground-level-nearplane-m>
-      <heading-offset-deg>0</heading-offset-deg>
-      <x-offset-m archive="y"> -105 </x-offset-m> <!-- Right -->
-      <y-offset-m archive="y">   50 </y-offset-m> <!-- Up    -->
-      <z-offset-m archive="y"> -180 </z-offset-m> <!-- Back  -->
+      <heading-offset-deg>0</heading-offset-deg>  
+      <x-offset-m archive="y"> -55 </x-offset-m> <!-- Right -->
+      <y-offset-m archive="y">  15 </y-offset-m> <!-- Up    -->
+      <z-offset-m archive="y"> -80 </z-offset-m> <!-- Back  -->
       <pitch-offset-deg> 0 </pitch-offset-deg>
       <default-field-of-view-deg> 120 </default-field-of-view-deg>
     </config>
@@ -50,12 +50,12 @@
     <name>surf view</name><type>lookfrom</type>
     <config>
       <from-model type="bool">true</from-model>
-      <from-model-idx type="int">0</from-model-idx>
+      <from-model-idx type="int">0</from-model-idx>   
       <x-offset-m archive="y"> -1.65 </x-offset-m> <!-- Right -->
       <y-offset-m archive="y"> -1.05 </y-offset-m> <!-- Up    -->
       <z-offset-m archive="y"> -4.24 </z-offset-m> <!-- Back  -->
       <pitch-offset-deg> 0 </pitch-offset-deg>
-      <default-field-of-view-deg> 110 </default-field-of-view-deg>
+      <default-field-of-view-deg> 95 </default-field-of-view-deg>
     </config>
   </view>
   

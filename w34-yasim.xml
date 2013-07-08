@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<!-- Junkers W34         : BARANGER Emmanuel with Melchior script (2013)
-
-     Sources              : http://en.wikipedia.org/wiki/Junkers_W_34
+<!-- Junkers W34       
+yasim base           : BARANGER Emmanuel with Melchior script (2013)
+juggling the values  : Henkel Tobias
+Sources              : http://en.wikipedia.org/wiki/Junkers_W_34 and many others like Junkers.de 
+                       wheres discriped that this airplane had a massive glide capacity.
+					   im noob so its not perfect but it hopefully will get sometime.
 
      Wingspan             : 17.75 m  ( 58 ft 2 3/4 in )
      Length               : 10.27 m  ( 33 ft 8 1/4 in )
@@ -16,19 +19,19 @@
 
 <airplane mass="3748" >
 
-  <approach speed="40" aoa="4" fuel="0.2">
+  <approach speed="57.5" aoa="5" fuel="0.2">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
     <control-setting axis="/controls/engines/engine[0]/mixture" value="0.65"/>
     <control-setting axis="/controls/gear/gear-down" value="1"/>
   </approach>
 
-  <cruise speed="126" alt="20670" fuel="0.5" >
-    <control-setting axis="/controls/engines/engine[0]/throttle" value="1.0" />
+  <cruise speed="102" alt="20670" fuel="0.5" >
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.54" />
     <control-setting axis="/controls/engines/engine[0]/mixture" value="0.65" />
     <control-setting axis="/controls/gear/gear-down" value="0"/>
   </cruise>
 
-  <cockpit x="1.665" y="0.300" z="0.713"/>
+  <cockpit x="1.665" y="0.300" z="0.803"/>
 
   <fuselage ax=" 4.465" ay="0" az=" 0.274" bx=" 2.854" by="0" bz=" 0.200" width="1.143" taper="0.70" midpoint="1"/>
   <fuselage ax=" 2.854" ay="0" az=" 0.200" bx="-0.274" by="0" bz=" 0.200" width="1.143" taper="1.00" midpoint="1"/>
@@ -53,11 +56,11 @@
   </wing>
 
   <hstab x="-4.25152" y="0" z="0.40578"
-	 chord="1.525"
-	 length="2.685"
+         chord="1.525"
+         length="2.685"
          taper="1"
          sweep="0">
-         <stall aoa="16" width="1" peak="1.5"/>
+         <stall aoa="16" width="5" peak="1.5"/>
          <flap0 start="0" end="1" lift="1.3" drag="1.3"/>
 
          <control-input axis="/controls/flight/elevator" control="FLAP0"/>
@@ -67,8 +70,8 @@
   </hstab>
 
   <vstab x="-4.22266" y="0" z="-0.18406"
-	 chord="1.979"
-	 length="1.795"
+         chord="1.979"
+         length="1.795"
          taper="0.60"
          sweep="10">
          <stall aoa="14" width="1" peak="1.5"/>
@@ -90,15 +93,16 @@
   <propeller x="4.60823" y="0" z="0.274"
              radius="1.66"
              mass="1157"
-             moment="10"
-             cruise-power="779"
-             cruise-speed="126"
-             cruise-rpm="2290"
+             moment="52"
+             gear-ratio="0.62"
+             cruise-power="529"
+             cruise-speed="162"
+             cruise-rpm="1789"
              cruise-alt="9515"
-             takeoff-power="789"
-             takeoff-rpm="3000">
+             takeoff-power="729"
+             takeoff-rpm="1857">
              <actionpt x="5.07367" y="0" z="0.274" />
-             <piston-engine eng-power="789"
+             <piston-engine eng-power="729"
                             eng-rpm="3000"
                             alt="20670">
                             <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle"/>
@@ -140,12 +144,18 @@
         <control-input axis="/controls/flight/rudder" control="STEER" src0="-1.0" src1="1.0" dst0="0.5" dst1="-0.5"/>
   </gear>
 
-  <!-- Fuel: 1520 lbs -->
-  <tank x="2.50" y=" 1.27" z="-0.42" capacity="948"/>
-<tank x="1.56" y=" 0.00" z="-0.40" capacity="37.5"/>
-<tank x="2.50" y="-1.27" z="-0.42" capacity="948"/>
-<weight x="0.5278" y="0.0" z="-0.2" mass-prop="/sim/weight[0]/weight-lb"/>
-<weight x="1.4" y="0" z="-2" mass-prop="/sim/weight[1]/weight-lb"/>
-<!-- Mass displacment --><ballast x="4" y="0" z="-2" mass="120"/>
+  <!-- Fuel: orig lbs -->
+  <tank x="2.50" y=" 1.27" z="-0.42" capacity="948.0"/>
+  <tank x="1.56" y=" 0.00" z="-0.40" capacity=" 37.5"/>
+  <tank x="2.50" y="-1.27" z="-0.42" capacity="948.0"/>
+  
+  <weight x=" 0.5278" y="0" z="-0.20" mass-prop="/sim/weight[0]/weight-lb"/>
+  <weight x=" 3.5278" y="0" z=" 0.42" mass-prop="/sim/weight[0]/weight-lb"/>
+  <weight x=" 1.8000" y="0" z=" 0.20" mass-prop="/sim/weight[1]/weight-lb"/> 
+  <weight x=" 0.5000" y="0" z=" 0.20" mass-prop="/sim/weight[2]/weight-lb"/> 
+  <weight x="-0.8400" y="0" z=" 0.20" mass-prop="/sim/weight[3]/weight-lb"/> 
+  
+  <!-- Mass displacment -->
+  <ballast x="2" y="0" z="-2" mass="120" />
 
 </airplane>

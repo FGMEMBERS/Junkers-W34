@@ -4,13 +4,7 @@
 
   <path>panel.ac</path>
 
-  <animation>
-    <!-- Objets opaques -->
-    <object-name>panel</object-name>
-    
-    <!-- Objets transparents -->
-  </animation>
-  
+  <!-- Cabin Light -->
   <animation>
     <type>material</type>
     <object-name>panel</object-name>
@@ -22,7 +16,6 @@
       <green> 0.175 </green>
       <blue>  0.140 </blue>
     </emission>
-    <!-- texture>Light_lit.png</texture -->
   </animation>
 
   <!-- THROTTLE -->
@@ -35,6 +28,7 @@
     </offsets>
   </model>
 
+  <!--                INSTRUMENTS                 -->
   <!-- AI -->
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/ai/ai.xml</path>
@@ -187,7 +181,7 @@
     </offsets>
   </model>
 
-  <model>
+   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/rpm/man18-ger.xml</path>
     <offsets>
       <x-m>  0.011 </x-m>
@@ -210,7 +204,7 @@
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/temp/temp.xml</path>
     <offsets>
       <x-m>  0.011 </x-m>
-      <y-m> -0.230 </y-m>
+      <y-m> -0.23 </y-m>
       <z-m>  0.175 </z-m>
     </offsets>
   </model>
@@ -224,21 +218,24 @@
     </offsets>
   </model>
 
+  <!--    middel Console     -->
+  <!--  Mix combi -->
   <model>
-    <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/temp/gemisch-ger.xml</path>
+  <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/temp/gemisch-ger.xml</path>
     <offsets>
       <x-m>  0.0140 </x-m>
       <y-m> -0.0474 </y-m>
       <z-m>  0.1750 </z-m>
     </offsets>
   </model>
-
+  
+  <!--  Fuel combi -->
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/temp/engine-ger.xml</path>
     <offsets>
       <x-m> 0.014 </x-m>
-      <y-m> 0.072 </y-m>
-      <z-m> 0.175 </z-m>
+      <y-m> 0.072</y-m>
+      <z-m>  0.175 </z-m>
     </offsets>
   </model>
 
@@ -260,7 +257,7 @@
       <z-m> 0.0960 </z-m>
     </offsets>
   </model>
-
+ 
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/fuel/fuel3.xml</path>
     <offsets>
@@ -269,30 +266,30 @@
       <z-m> 0.096 </z-m>
     </offsets>
   </model>
-
+ 
   <!-- control lamps -->
   <model>
-    <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/fuel/fuel-dummy.xml</path>
-    <condition>
-      <greater-than>
-        <property>consumables/fuel/total-fuel-kg</property>
-        <value>442</value>
-      </greater-than>
-    </condition>
+    <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/fuel/fuel-dummy.xml</path> 
     <offsets>
-      <x-m> 0.009 </x-m>
-      <y-m> 0.104 </y-m>
-      <z-m> 0.084 </z-m>
+      <x-m> 0.00889 </x-m>
+      <y-m> 0.10400 </y-m>
+      <z-m> 0.08400 </z-m>
     </offsets>
   </model>
-
+ 
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/fuel/fuel-half.xml</path>
     <condition>
-      <less-than>
-        <property>consumables/fuel/total-fuel-kg</property>
-        <value>442</value>
-      </less-than>
+      <and>
+        <less-than>
+          <property>consumables/fuel/total-fuel-kg</property>
+          <value>442</value>
+        </less-than>
+        <or>
+          <property>controls/electric/battery-switch</property>
+          <property>engines/engine/running</property>
+        </or>
+      </and>
     </condition>
     <offsets>
       <x-m> 0.009 </x-m>
@@ -300,29 +297,29 @@
       <z-m> 0.084 </z-m>
     </offsets>
   </model>
-
+ 
   <model>
-    <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/fuel/fuel-dummy.xml</path>
-    <condition>
-      <greater-than>
-        <property>consumables/fuel/total-fuel-kg</property>
-        <value>120</value>
-      </greater-than>
-    </condition>
+    <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/fuel/fuel-dummy.xml</path> 
     <offsets>
-      <x-m> 0.009 </x-m> 
-      <y-m> 0.104 </y-m> 
-      <z-m> 0.108 </z-m> 
+      <x-m> 0.00889 </x-m> 
+      <y-m> 0.10400 </y-m> 
+      <z-m> 0.10800 </z-m> 
     </offsets>
   </model>
-
+ 
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/fuel/fuel-reserve.xml</path> 
     <condition>
-      <less-than>
-        <property>consumables/fuel/total-fuel-kg</property>
-        <value>120</value>
-      </less-than>
+      <and>
+        <less-than>
+          <property>consumables/fuel/total-fuel-kg</property>
+          <value>120</value>
+        </less-than>
+        <or>
+          <property>controls/electric/battery-switch</property>
+          <property>engines/engine/running</property>
+        </or>
+      </and>
     </condition>
     <offsets>
       <x-m> 0.009 </x-m> 
@@ -330,7 +327,8 @@
       <z-m> 0.108 </z-m> 
     </offsets>
   </model>
-
+ 
+  <!-- Groundwarn Pilot -->
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/fuel/fuel-dummy.xml</path> 
     <offsets>
@@ -339,7 +337,7 @@
       <z-m>  0.15700 </z-m>
     </offsets>
   </model>
-  
+ 
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/fuel/ground-warn.xml</path> 
     <condition>
@@ -348,8 +346,8 @@
         <or>
           <property>/sim/alarms/stall-warning</property>
           <less-than>
-            <property>instrumentation/altimeter/indicated-altitude-ft</property>
-            <value>36</value>
+            <property>position/gear-agl-m</property>
+            <value>25</value>
           </less-than>
         </or>
         <not>
@@ -368,7 +366,8 @@
       <z-m>  0.157 </z-m>
     </offsets>
   </model>
-
+ 
+  <!-- Groundwarn Copilot -->
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/fuel/fuel-dummy.xml</path> 
     <offsets>
@@ -377,7 +376,7 @@
       <z-m> 0.15700 </z-m>
     </offsets>
   </model>
-  
+ 
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/fuel/ground-warn.xml</path> 
     <condition>
@@ -386,8 +385,8 @@
         <or>
           <property>/sim/alarms/stall-warning</property>
           <less-than>
-            <property>instrumentation/altimeter/indicated-altitude-ft</property>
-            <value>36</value>
+            <property>position/gear-agl-m</property>
+            <value>25</value>
           </less-than>
         </or>
         <not>
@@ -403,7 +402,7 @@
       <z-m> 0.157 </z-m>
     </offsets>
   </model>
-
+ 
   <!-- o2 -->
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/o2/o2pressure.xml</path>
@@ -413,7 +412,7 @@
       <z-m> -0.114 </z-m>
     </offsets>
   </model>
-
+ 
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/o2/o2guard.xml</path>
     <offsets>
@@ -422,7 +421,7 @@
       <z-m> -0.114 </z-m>
     </offsets>
   </model>
-
+ 
   <!-- switches -->
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/switcher/mags.xml</path>
@@ -433,20 +432,35 @@
       <roll-deg> -90 </roll-deg>
     </offsets>
   </model>
-
+ 
   <model>
-    <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/switcher/starter.xml</path>
     <condition>
       <property>controls/electric/battery-switch</property>
     </condition>
+    <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/switcher/starter.xml</path>
     <offsets>
       <x-m> 0.014 </x-m>
       <y-m> 0.012 </y-m>
       <z-m> 0.175 </z-m>
-      <roll-deg> -32 </roll-deg>
+      <roll-deg> -32 </roll-deg>  
     </offsets>
   </model>
-
+ 
+  <model>
+    <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/switcher/starter-dummy.xml</path>
+    <condition>
+      <not>
+        <property>controls/electric/battery-switch</property>
+      </not>
+    </condition>   
+    <offsets>
+      <x-m> 0.014 </x-m>
+      <y-m> 0.012 </y-m>
+      <z-m> 0.175 </z-m>
+      <roll-deg> -32 </roll-deg>  
+    </offsets>
+  </model>
+ 
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/switcher/pump1.xml</path>
     <offsets>
@@ -455,7 +469,7 @@
       <z-m>  0.065 </z-m>
     </offsets>
   </model>
-
+ 
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/switcher/pump2.xml</path>
     <offsets>
@@ -464,7 +478,7 @@
       <z-m> 0.0650 </z-m>
     </offsets>
   </model>
-
+ 
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/switcher/pump3.xml</path>
     <offsets>
@@ -473,7 +487,7 @@
       <z-m> 0.065 </z-m>
     </offsets>
   </model>
-
+ 
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/switcher/batt.xml</path>
     <offsets>
@@ -482,7 +496,7 @@
       <z-m>  0.160 </z-m>
     </offsets>
   </model>
-  
+ 
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/switcher/batt.xml</path>
     <offsets>
@@ -491,16 +505,16 @@
       <z-m> 0.16 </z-m>
     </offsets>
   </model>
-
+ 
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/switcher/alt.xml</path>
     <offsets>
-      <x-m>  0.010 </x-m>
-      <y-m> -0.300 </y-m>
-      <z-m>  0.160 </z-m>
+      <x-m>  0.01 </x-m>
+      <y-m> -0.30 </y-m>
+      <z-m>  0.16 </z-m>
     </offsets>
   </model>
-  
+ 
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/switcher/alt.xml</path>
     <offsets>
@@ -509,7 +523,7 @@
       <z-m> 0.160 </z-m>
     </offsets>
   </model>
-
+ 
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/switcher/cabine.xml</path>
     <offsets>
@@ -518,7 +532,7 @@
       <z-m>  0.1300 </z-m>
     </offsets>
   </model>
-
+ 
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/switcher/pos-lights.xml</path>
     <offsets>
@@ -527,7 +541,7 @@
       <z-m>  0.130 </z-m>
     </offsets>
   </model>
-
+ 
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/switcher/nav-lights.xml</path>
     <offsets>
@@ -536,7 +550,7 @@
       <z-m> 0.130 </z-m>
     </offsets>
   </model>
-
+ 
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/switcher/str-lights.xml</path>
     <offsets>
@@ -545,28 +559,13 @@
       <z-m> 0.130 </z-m>
     </offsets>
   </model>
-
+ 
   <model>
     <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/switcher/land-lights.xml</path>
     <offsets>
       <x-m> 0.009 </x-m>
       <y-m> 0.069 </y-m>
       <z-m> 0.130 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Junkers-W34/Models/Interior/Panel/Instruments/switcher/starter-dummy.xml</path>
-    <condition>
-      <not>
-        <property>controls/electric/battery-switch</property>
-      </not>
-    </condition>
-    <offsets>
-      <x-m> 0.014 </x-m>
-      <y-m> 0.012 </y-m>
-      <z-m> 0.175 </z-m>
-      <roll-deg>-32</roll-deg>
     </offsets>
   </model>
 

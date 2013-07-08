@@ -1,4 +1,4 @@
-This driver is extracted from the collection of drivers for X-Plane conducted by Bertrand AUGRAS.
+General pilot is extracted from the collection of drivers for X-Plane conducted by Bertrand AUGRAS.
 
 Site   : http://baugras.club.fr/xplane/Site/france.html
 
@@ -22,3 +22,13 @@ J'espère ne pas trahir l'esprit de son travail
 
 BARANGER Emmanuel http://helijah.free.fr
 
+
+
+#############
+# There are two different pilots ...
+# take a look in the interior.xml 
+# testpilot textures done by
+#
+#good flight
+
+cptGoosnen

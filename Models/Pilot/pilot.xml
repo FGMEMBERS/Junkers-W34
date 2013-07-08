@@ -4,6 +4,28 @@
 
   <path>general_pilot.ac</path>
 
+  
+  <animation><type>material</type>
+    <object-name>tete</object-name>
+    <object-name>visiere</object-name>
+    <object-name>corps</object-name>
+    <object-name>brasG</object-name>
+    <object-name>brasD</object-name>
+    <object-name>avantbrasG</object-name>
+    <object-name>avantbrasD</object-name>
+    <object-name>manche</object-name>
+    <object-name>cuisseG</object-name>
+    <object-name>cuisseD</object-name>
+    <object-name>jambeG</object-name>
+    <object-name>jambeD</object-name>
+    <object-name>piedG</object-name>
+    <object-name>piedD</object-name>
+<condition>
+<property>controls/lighting/int-light</property>
+</condition>
+<emission><red>0.15</red><green>0.12</green><blue>0.124</blue></emission>
+<!-- texture>Light_lit.png</texture --></animation>
+  
   <animation>
     <!-- Objets opaques -->
     <object-name>tete</object-name>

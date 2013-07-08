@@ -18,145 +18,53 @@
 
   <key n="100">
     <name>d</name>
-    <desc>Canopy</desc>
+    <desc>door</desc>
     <binding>
-      <command>nasal</command>
-      <script>doors.crew.toggle();</script>
-    </binding>
-  </key>
-
-  <key n="48">
-    <name>0</name>
-    <desc>preflyset</desc>
-    <repeatable type="bool">true</repeatable>
-    <binding>
-      <command>property-assign</command>
-      <property>/controls/engines/engine[0]/mixture</property>
-      <value>0.075</value>
-    </binding>
-    <binding>
-      <command>property-assign</command>
-      <property>/controls/engines/engine[0]/throttle</property>
-      <value>0</value>
-    </binding>
-  </key>
-
-  <key n="126">
-    <name>~</name>
-    <desc>full</desc>
-    <repeatable type="bool">true</repeatable>
-    <binding>
-      <command>property-assign</command>
-      <property>/controls/engines/engine[0]/mixture</property>
-      <value>1</value>
-    </binding>
-    <binding>
-      <command>property-assign</command>
-      <property>/controls/engines/engine[0]/magnetos</property>
-      <value>3</value>
-    </binding>
-    <binding>
-      <command>property-assign</command>
-      <property>/controls/engines/engine[0]/throttle</property>
-      <value>1</value>
-    </binding>
-  </key>
-
-  <key n="42">
-    <name>*</name>
-    <desc>takeoff-set</desc>
-    <repeatable type="bool">true</repeatable>
-    <binding>
-      <command>property-assign</command>
-      <property>/controls/engines/engine[0]/mixture</property>
-      <value>0.77175</value>
-    </binding>
-    <binding>
-      <command>property-assign</command>
-      <property>/controls/engines/engine[0]/magnetos</property>
-      <value>3</value>
-    </binding>
-    <binding>
-      <command>property-assign</command>
-      <property>/controls/engines/engine[0]/throttle</property>
-      <value>1</value>
-    </binding>
-  </key>
-
-  <key n="110">
-    <name>n</name>
-    <binding>
-      <command>property-assign</command>
-      <property>/controls/engines/engine[0]/magnetos</property>
-      <value>1</value>
-    </binding>
-    <binding>
-      <command>property-assign</command>
-      <property>/controls/engines/engine[0]/mixture</property>
-      <value>0.386</value>
-    </binding>
-    <binding>
-      <command>property-assign</command>
-      <property>/controls/engines/engine[0]/throttle</property>
-      <value>0.62</value>
-    </binding>
-  </key>
-
-  <key n="78">
-    <name>N</name>
-    <binding>
-      <command>property-assign</command>
-      <property>/controls/engines/engine[0]/magnetos</property>
-      <value>1</value>
-    </binding>
-    <binding>
-      <command>property-assign</command>
-      <property>/controls/engines/engine[0]/mixture</property>
-      <value>0.3</value>
-    </binding>
-    <binding>
-      <command>property-assign</command>
-      <property>/controls/engines/engine[0]/throttle</property>
-      <value>0.1</value>
-    </binding>
-  </key>
-
-  <key n="61">
-    <name>=</name>
-    <binding>
-      <command>property-assign</command>
-      <property>/controls/engines/engine[0]/mixture</property>
-      <value>0.56825</value>
+     <command>nasal</command>
+     <script>doors.crew.toggle();</script>
     </binding>
   </key>
 
   <key n="33">
     <name>!</name>
     <binding>
-      <command>property-assign</command>
-      <property>/controls/engines/engine[0]/mixture</property>
-      <value>0.40325</value>
+       <command>property-toggle</command>
+       <property>/controls/electric/battery-switch</property>
+     </binding>
+     <binding>
+       <command>property-toggle</command>
+       <property>controls/switcher/battery</property>
     </binding>
   </key>
 
-  <key n="37">
-    <name>%</name>
+  <key n="102">
+    <name>f</name>
     <binding>
-      <command>property-assign</command>
-      <property>/controls/engines/engine[0]/mixture</property>
-      <value>0.28</value>
+      <command>property-toggle</command>
+      <property>controls/fuel/tank[2]/pump</property>
+    </binding>
+    <binding>
+      <command>property-toggle</command>
+      <property>consumables/fuel/tank[2]/selected</property>
+    </binding>
+    <binding>
+      <command>property-toggle</command>
+      <property>controls/fuel/tank[0]/pump</property>
+    </binding>
+    <binding>
+      <command>property-toggle</command>
+      <property>consumables/fuel/tank[0]/selected</property>
+    </binding>
+    <binding>
+      <command>property-toggle</command>
+      <property>engines/engine/fuel-pump</property>
+    </binding>
+    <binding>
+      <command>property-toggle</command>
+      <property>controls/switcher/pump3</property>
     </binding>
   </key>
 
-  <key n="36">
-    <name>$</name>
-    <binding>
-      <command>property-assign</command>
-      <property>/controls/engines/engine[0]/mixture</property>
-      <value>0.185</value>
-    </binding>
-  </key>
- 
   <key n="76">
     <name>L</name>
     <binding>
@@ -173,10 +81,10 @@
     <name>s</name>
     <binding>
       <command>property-assign</command>
-      <property>/controls/engines/engine[0]/starter</property>
-      <value>1</value>
-      <condition>
-        <property>controls/electric/battery-switch</property>
+      <property>/controls/engines/engine[0]/starter</property> 
+    <value>1</value>
+    <condition>
+      <property>controls/electric/battery-switch</property>
       </condition>
     </binding>
   </key>
@@ -185,30 +93,39 @@
     <name>#</name>
     <binding>
       <command>property-assign</command>
-      <property>nix</property>
-      <value>0.555</value>
+      <property>/controls/flight/aileron-trim</property> 
+      <value>0</value>
+    </binding>
+    <binding>
+      <command>property-assign</command>
+      <property>/controls/flight/elevator-trim</property> 
+    <value>0</value>
+    </binding>
+    <binding>
+      <command>property-assign</command>
+      <property>/controls/flight/rudder-trim</property> 
+      <value>0</value>
     </binding>
   </key>
 
-  <key n="44">
-    <name>,</name>
+  <key n="91">
+    <name>[</name>
     <repeatable type="bool">true</repeatable>
     <desc>Roll trim-- Left</desc>
     <binding>
       <command>property-adjust</command>
       <property>/controls/flight/aileron-trim</property>
-      <step type="double">-0.0015</step>
+      <step type="double">-0.001</step>
     </binding>
   </key>
-  
-  <key n="46">
-    <name>.</name>
+
+  <key n="93"><name>]</name>
     <repeatable type="bool">true</repeatable>
     <desc>Roll trim++ Right</desc>
     <binding>
       <command>property-adjust</command>
       <property>/controls/flight/aileron-trim</property>
-      <step type="double">0.0015</step>
+      <step type="double">0.001</step>
     </binding>
   </key>
 

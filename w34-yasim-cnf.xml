@@ -5,7 +5,7 @@
   <sim>
 
     <description>Junkers W34 (YASim)</description>
-    <author>Emmanuel BARANGER (3D/FDM), Tobias HENKEL (PANEL/Liveries)</author>
+    <author>Emmanuel BARANGER (3D/FDM) Cpt Goosnen (Cockpit/textures etc.)</author>
     <flight-model archive="y">yasim</flight-model>
     <aero archive="y">w34-yasim</aero>
 
@@ -32,5 +32,11 @@
 
   </sim>
 
+  <controls>
+    <gear>
+      <brake-parking>1</brake-parking>
+    </gear>
+  </controls>
+  
 </PropertyList>
 
