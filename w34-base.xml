@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <description>Junkers W34 (YASim)</description>
+    <author>BARANGER Emmanuel (3D/FDM) Cpt Goosnen (Cockpit/textures etc.)</author>
+    <aircraft-version>0.2</aircraft-version>
+    <status>beta</status>
+
+    <multiplay n="0">
+      <chat_display>1</chat_display>
+      <generic n="0"> 
+        <int type="int" n="0">  0 </int>                                           <!--  0 immat -->
+        <int type="int" n="1">  0 </int>                                           <!--  1 immat -->
+        <int type="int" n="2">  0 </int>                                           <!--  2 immat -->
+        <int type="int" n="3">  0 </int>                                           <!--  3 immat -->
+        <int type="int" n="4">  0 </int>                                           <!--  4 immat -->
+        <int type="int" n="5">  0 </int>                                           <!--  5 immat -->
+        <int type="bool" n="6" alias="/smoke/active"> 0 </int>                     <!--  6 start smoke -->
+        <int type="int" n="7" alias="smoke/particlepersec"> 50 </int>              <!--  7 particlepersec -->
+        <int type="int" n="10" alias="controls/armament/trigger">0</int>           <!-- 10 reserved for bombable mode -->
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+        <float n="2" alias="/position/gear-agl-m"> 0 </float>                      <!-- altitude for MP shadow -->
+        <float n="3" alias="/smoke/colors/knob-red">1</float>                      <!-- 3 smoke mixer red setting -->
+        <float n="4" alias="/smoke/colors/knob-green">1</float>                    <!-- 4 smoke mixer green setting -->
+        <float n="5" alias="/smoke/colors/knob-blue">1</float>                     <!-- 5 smoke mixer blue setting -->
+        <string n="9" type="string" />                                             <!-- string[9] reserved for bombable mode -->
+      </generic>
+    </multiplay>
+
+    <model>
+      <!-- start-idling type="bool">0</start-idling -->
+      <manual>
+        <total-pages type="int">5</total-pages>
+        <x-offset>0</x-offset>
+        <y-offset>0</y-offset>
+        <z-offset>0</z-offset>
+      </manual>
+    </model>
+    
+    <airport>
+      <runways>
+        <start-offset-m>20</start-offset-m>
+      </runways>
+    </airport>
+
+    <help>
+      <title>Junkers W34 </title>
+      <line>This is a constant speed propeller unit without</line>	  
+      <line>flaps! Max grossweight official: 7050 lb! </line>
+      <line>Unofficial and with nice wind: 8000+! be carefull </line> 
+      <line>with ur payload, otherwise u go swim ;)</line> 
+      <line> _____________________________________</line>
+      <line>CabinDoor                             " d "</line>
+      <line>Fix Door                                " D "</line>
+      <line>Landlight                               " L "</line>
+      <line>Rolltrim                                  " [  ] "</line>
+      <line>Pitchtrim                         "pos1/End"</line>
+      <line>center trim                             " # "</line>      
+      <line></line>
+      <line>     -Startup-</line>
+      <line>1. Hauptschalter Ein                  " ! "</line>
+      <line>2. Magnetschalter Ein               " } "</line>
+      <line>3. Treibstoffpumpe Ein               " f "  </line>
+      <line>4. Starter halten                        "s"</line>
+      <line></line>
+      <line>     -Takeoff-   </line>
+      <line>1. Gemisch einstellen                "m/M" </line>
+      <line>2. Gas geben                          "pg-up" </line>
+      <line>     (Seaplane trim tailheavy</line>
+      <line>     + everytime against wind)   </line>
+      <line></line>
+      <line>     -Landing-</line>
+      <line>Pay attention to the warnlight right in </line>
+      <line>front of u. Raise nose if its green.</line>
+      <line> _____________________________________</line>
+      <line>Gemisch Einstellungen basierend auf n.N.</line>
+      <line> (mixture settings based on sealevel)</line>
+      <line></line>
+      <line>takeoff       -6.5-               50knts</line>
+      <line>cruise        -3.1-             100knts</line>
+      <line>landing      -1.1-          40-60knts</line>
+      <line></line>
+      <line>Hoehengas  (alt-mix)</line>
+      <line></line>
+      <line>10.000ft    - 4.5 -     </line>
+      <line>20.000ft    - 3.7 -     </line>
+      <line>30.000ft    - 2.6 -    </line>
+      <line>40.000ft    -1.85-     </line>
+    </help>
+
+    <!--
+    <systems>
+      <electrical>
+        <path>Aircraft/Generic/generic-electrical.xml</path>
+      </electrical>
+    </systems>
+    -->
+
+    <!--
+    <weight n="0">
+      <name>Crew + Passengers</name>
+      <weight-lb>140</weight-lb>
+      <max-lb>1200</max-lb>
+      <min-lb>120</min-lb>
+    </weight>
+
+    <weight n="1">
+      <name>Cargo !!!max 7050 lb</name> 
+      <weight-lb>0</weight-lb>
+      <max-lb>2500</max-lb>
+      <min-lb>0</min-lb>
+    </weight>
+    -->
+
+    <weight n="0">
+      <name>Crew</name>
+      <weight-lb>180</weight-lb> 
+      <max-lb>400</max-lb>
+      <min-lb>120</min-lb>
+    </weight>
+    
+    <weight n="1">
+      <name>Frt Cargo/Passngr</name>
+      <weight-lb>420</weight-lb> 
+      <max-lb>1200</max-lb>
+      <min-lb>0</min-lb>      
+    </weight>
+    
+    <weight n="2">
+      <name>Rr Cargo/Passngr</name>
+      <weight-lb>400</weight-lb> 
+      <max-lb>1200</max-lb>
+      <min-lb>0</min-lb>      
+    </weight>
+    
+    <weight n="3">
+      <name>Baggage</name>
+      <weight-lb>0</weight-lb> 
+      <max-lb>1000</max-lb>
+      <min-lb>0</min-lb>      
+    </weight>
+
+    <w34>
+      <state type="int">5</state>
+      <airspeed-kmh type="float">0.0</airspeed-kmh>
+      <engine-rpm type="float">0.0</engine-rpm>
+      <engine-volume-low-rpm type="float">0.0</engine-volume-low-rpm>
+      <engine-volume-high-rpm type="float">0.0</engine-volume-high-rpm>
+    </w34>
+    
+    <menubar include="Dialogs/w34-menu.xml"/>
+  
+  </sim>
+
+  <!-- Set -->
+  <consumables>
+    <fuel>
+      <tank n="0">
+        <name>L wing</name>
+        <selected type="bool">false</selected>
+      </tank>
+      <tank n="1">
+        <name>backup</name>
+        <selected type="bool">false</selected>
+      </tank>
+      <tank n="2">
+        <name>R wing</name>
+        <selected type="bool">false</selected>
+      </tank>
+    </fuel>
+  </consumables>
+  
+  <controls>
+    <electric>
+      <battery-switch type="bool">0</battery-switch>
+      <avionics-switch type="bool">0</avionics-switch>
+      <external-power type="bool">0</external-power>
+      <engine></engine>
+    </electric>
+    <engines>
+      <engine>
+        <mixture>0.075</mixture>
+        <generator>true</generator>
+        <master-bat>false</master-bat>
+        <fuel-pump>true</fuel-pump>
+      </engine>
+    </engines>
+  </controls>
+  
+  <environment>
+    <turbulence>
+      <use-cloud-turbulence>true</use-cloud-turbulence>
+    </turbulence>
+  </environment>
+
+  <input>  
+    <keyboard include="Nasal/w34-keyboard.xml"/>
+  </input>
+
+  <nasal>  
+    <doors>  
+      <file>Aircraft/Junkers-W34/Nasal/doors.nas</file>
+    </doors>
+    <w34>
+      <file>Aircraft/Junkers-W34/Nasal/Electrical.nas</file>     
+      <file>Aircraft/Junkers-W34/Nasal/liveries.nas</file>
+      <file>Aircraft/Junkers-W34/Nasal/light.nas</file>
+    </w34>
+    <manual>
+      <file>Aircraft/Junkers-W34/Manual/doc.nas</file>
+    </manual> 
+  </nasal>
+
+</PropertyList>

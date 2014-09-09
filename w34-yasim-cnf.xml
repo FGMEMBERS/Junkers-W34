@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList include="w34-base.xml">
+
+  <sim>
+
+    <description>Junkers W34 (YASim)</description>
+    <author>Emmanuel BARANGER (3D/FDM) Cpt Goosnen (Cockpit/textures etc.)</author>
+    <flight-model archive="y">yasim</flight-model>
+    <aero archive="y">w34-yasim</aero>
+
+    <multiplay n="0">
+      <generic n="0">
+        <string n="1" type="string">wheels</string>
+      </generic>
+    </multiplay>
+
+    <startup>
+      <splash-texture>Aircraft/Junkers-W34/Splashs/w34-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path archive="y">Aircraft/Junkers-W34/Sounds/w34-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/Junkers-W34/Models/w34.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+
+  </sim>
+
+  <controls>
+    <gear>
+      <brake-parking>1</brake-parking>
+    </gear>
+  </controls>
+  
+</PropertyList>
+

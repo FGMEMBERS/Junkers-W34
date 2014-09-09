@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+
+<PropertyList>
+  
+  <sim>
+    
+    <model>
+      <livery>
+        <name type="string">Dominica</name>
+        <texture>Liveries/Dominica.png</texture>
+        <diffuse>
+          <red>   1 </red>
+          <green> 1 </green>
+          <blue>  1 </blue>
+,       </diffuse>
+        <ambient>
+          <red>   1 </red>
+          <green> 1 </green>
+          <blue>  1 </blue>
+        </ambient>
+        <specular>
+          <red>   1 </red>
+          <green> 1 </green>
+          <blue>  1 </blue>
+        </specular>
+        <emission>
+          <red>   0 </red>
+          <green> 0 </green>
+          <blue>  0 </blue>
+        </emission>
+      </livery>
+      <livery-engine>
+        <texture>Liveries/engine-old.png</texture>
+        <diffuse>
+          <red>   1 </red>
+          <green> 1 </green>
+          <blue>  1 </blue>
+        </diffuse>
+        <ambient>
+          <red>   1 </red>
+          <green> 1 </green>
+          <blue>  1 </blue>
+        </ambient>
+        <specular>
+          <red>   1 </red>
+          <green> 1 </green>
+          <blue>  1 </blue>
+        </specular>
+        <emission>
+          <red>   0 </red>
+          <green> 0 </green>
+          <blue>  0 </blue>
+        </emission>
+      </livery-engine>
+    </model>
+      
+  </sim>
+  
+</PropertyList>

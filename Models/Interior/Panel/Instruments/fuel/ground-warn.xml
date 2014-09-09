@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>indlight.ac</path>
+
+  <animation>
+    <object-name>Case</object-name>
+    <object-name>socket</object-name>
+    <object-name>lamp</object-name>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>Case</object-name>
+    <object-name>socket</object-name>
+    <object-name>lamp</object-name>
+    <emission>
+      <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+      <red>   0.25 </red>
+      <green> 0.25 </green>
+      <blue>  0.28 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>lamp</object-name>
+    <emission>
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+      <red>   0.45 </red>
+      <green> 2.65 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+
+</PropertyList>

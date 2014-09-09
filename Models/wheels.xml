@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>wheels.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>direction</object-name>
+    
+    <object-name>axeGH</object-name>
+    <object-name>axeGB</object-name>
+    <object-name>roueG</object-name>
+    <object-name>axeDH</object-name>
+    <object-name>axeDB</object-name>
+    <object-name>roueD</object-name>
+    <object-name>axeA</object-name>
+    <object-name>roueA</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>direction</object-name>
+    
+    <object-name>axeGH</object-name>
+    <object-name>axeGB</object-name>
+    <object-name>roueG</object-name>
+    <object-name>axeDH</object-name>
+    <object-name>axeDB</object-name>
+    <object-name>roueD</object-name>
+    <object-name>axeA</object-name>
+    <object-name>roueA</object-name>
+    
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>texture.png</texture>
+    <specular>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
+    </specular>
+    <emission>
+      <red-prop>emission/red</red-prop>
+      <green-prop>emission/green</green-prop>
+      <blue-prop>emission/blue</blue-prop>
+    </emission>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
+    <object-name>direction</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Effects/model-combined-deferred</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>direction</object-name>
+  </effect>
+
+  <!-- Effets sur le sol -->
+  <!-- Roue gauche -->
+  <model>
+    <path>Aircraft/Junkers-W34/Models/Effects/ground/ground0.xml</path>
+    <offsets>
+      <x-m> -2.69790 </x-m>
+      <y-m> -1.27007 </y-m>
+      <z-m> -2.16846 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Roue droite -->
+  <model>
+    <path>Aircraft/Junkers-W34/Models/Effects/ground/ground1.xml</path>
+    <offsets>
+      <x-m> -2.69790 </x-m>
+      <y-m>  1.27007 </y-m>
+      <z-m> -2.16846 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Patte de queue -->
+  <model>
+    <path>Aircraft/Junkers-W34/Models/Effects/ground/ground2.xml</path>   
+    <offsets>
+      <x-m>  4.28492 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.71734 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Gouverne de direction -->
+  <animation>
+    <type>rotate</type>
+    <object-name>direction</object-name>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor> 20 </factor>
+    <center>
+      <x-m> 4.52490 </x-m>
+      <y-m> 0.00000 </y-m>
+      <z-m> 0.68157 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <!-- Compression -->
+  <animation>
+    <name>TrainGauche</name>
+    <object-name>roueG</object-name>
+    <object-name>axeGB</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>TrainGauche</object-name>
+    <property>gear/gear[0]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0.0000 </ind><dep>   0 </dep></entry>
+      <entry><ind> 0.7565 </ind><dep>  -5 </dep></entry>
+      <entry><ind> 1.0000 </ind><dep> -10 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -2.17189 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.71693 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>axeGH</object-name>
+    <property>gear/gear[0]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0.0000 </ind><dep>   0 </dep></entry>
+      <entry><ind> 0.7565 </ind><dep>  -5 </dep></entry>
+      <entry><ind> 1.0000 </ind><dep> -10 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -2.80527 </x-m>
+      <y-m> -1.01247 </y-m>
+      <z-m> -0.63342 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>TrainDroit</name>
+    <object-name>roueD</object-name>
+    <object-name>axeDB</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>TrainDroit</object-name>
+    <property>gear/gear[1]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0.0000 </ind><dep>   0 </dep></entry>
+      <entry><ind> 0.7565 </ind><dep>   5 </dep></entry>
+      <entry><ind> 1.0000 </ind><dep>  10 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -2.17189 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.71693 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>axeDH</object-name>
+    <property>gear/gear[1]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0.0000 </ind><dep>  0 </dep></entry>
+      <entry><ind> 0.7565 </ind><dep>  5 </dep></entry>
+      <entry><ind> 1.0000 </ind><dep> 10 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -2.80527 </x-m>
+      <y-m>  1.01247 </y-m>
+      <z-m> -0.63342 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Rotation des roues lors du roulage -->
+  <animation>
+    <type>spin</type>
+    <object-name>roueG</object-name>
+    <property>gear/gear[0]/rollspeed-ms</property>
+    <factor> -30 </factor>
+    <axis>
+      <x1-m> -2.71433 </x1-m>
+      <y1-m> -1.34263 </y1-m>
+      <z1-m> -1.75120 </z1-m>
+      <x2-m> -2.71433 </x2-m>
+      <y2-m> -1.16503 </y2-m>
+      <z2-m> -1.73566 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>spin</type>
+    <object-name>roueD</object-name>
+    <property>gear/gear[1]/rollspeed-ms</property>
+    <factor> -30 </factor>
+    <axis>
+      <x1-m> -2.71433 </x1-m>
+      <y1-m>  1.16503 </y1-m>
+      <z1-m> -1.73566 </z1-m>
+      <x2-m> -2.71433 </x2-m>
+      <y2-m>  1.34263 </y2-m>
+      <z2-m> -1.75120 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>spin</type>
+    <object-name>roueA</object-name>
+    <property>gear/gear[2]/rollspeed-ms</property>
+    <factor> 30 </factor>
+    <center>
+      <x-m>  4.28031 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.69360 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

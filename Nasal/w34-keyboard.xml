@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <key n="68">
+    <name>D</name>
+    <desc>fix door</desc>
+    <binding>
+      <command>property-assign</command>
+      <property>sim/model/door-positions/crew/position-norm</property>
+      <value>1.5</value>
+      <condition>
+        <property>sim/model/door-positions/crew/position-norm</property>
+        <value>1</value>
+      </condition>
+    </binding>
+  </key>
+
+  <key n="100">
+    <name>d</name>
+    <desc>door</desc>
+    <binding>
+     <command>nasal</command>
+     <script>doors.crew.toggle();</script>
+    </binding>
+  </key>
+
+  <key n="33">
+    <name>!</name>
+    <binding>
+       <command>property-toggle</command>
+       <property>/controls/electric/battery-switch</property>
+     </binding>
+     <binding>
+       <command>property-toggle</command>
+       <property>controls/switcher/battery</property>
+    </binding>
+  </key>
+
+  <key n="102">
+    <name>f</name>
+    <binding>
+      <command>property-toggle</command>
+      <property>controls/fuel/tank[2]/pump</property>
+    </binding>
+    <binding>
+      <command>property-toggle</command>
+      <property>consumables/fuel/tank[2]/selected</property>
+    </binding>
+    <binding>
+      <command>property-toggle</command>
+      <property>controls/fuel/tank[0]/pump</property>
+    </binding>
+    <binding>
+      <command>property-toggle</command>
+      <property>consumables/fuel/tank[0]/selected</property>
+    </binding>
+    <binding>
+      <command>property-toggle</command>
+      <property>engines/engine/fuel-pump</property>
+    </binding>
+    <binding>
+      <command>property-toggle</command>
+      <property>controls/switcher/pump3</property>
+    </binding>
+  </key>
+
+  <key n="76">
+    <name>L</name>
+    <binding>
+      <command>property-toggle</command>
+      <property>controls/lighting/land</property>
+    </binding>
+    <binding>
+      <command>property-toggle</command>
+      <property>controls/switcher/land</property>
+    </binding>
+  </key>
+
+  <key n="115">
+    <name>s</name>
+    <binding>
+      <command>property-assign</command>
+      <property>/controls/engines/engine[0]/starter</property> 
+    <value>1</value>
+    <condition>
+      <property>controls/electric/battery-switch</property>
+      </condition>
+    </binding>
+  </key>
+
+  <key n="35">
+    <name>#</name>
+    <binding>
+      <command>property-assign</command>
+      <property>/controls/flight/aileron-trim</property> 
+      <value>0</value>
+    </binding>
+    <binding>
+      <command>property-assign</command>
+      <property>/controls/flight/elevator-trim</property> 
+    <value>0</value>
+    </binding>
+    <binding>
+      <command>property-assign</command>
+      <property>/controls/flight/rudder-trim</property> 
+      <value>0</value>
+    </binding>
+  </key>
+
+  <key n="91">
+    <name>[</name>
+    <repeatable type="bool">true</repeatable>
+    <desc>Roll trim-- Left</desc>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/flight/aileron-trim</property>
+      <step type="double">-0.001</step>
+    </binding>
+  </key>
+
+  <key n="93"><name>]</name>
+    <repeatable type="bool">true</repeatable>
+    <desc>Roll trim++ Right</desc>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/flight/aileron-trim</property>
+      <step type="double">0.001</step>
+    </binding>
+  </key>
+
+</PropertyList>

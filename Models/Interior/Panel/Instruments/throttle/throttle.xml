@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>throttle.ac</path>
+
+  <animation>
+    <object-name>base</object-name>
+    <object-name>Mixture</object-name>
+    <object-name>PropPitch</object-name>
+    <object-name>Throttle</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Throttle</object-name>
+    <property>controls/engines/engine/throttle</property>
+    <factor> 63 </factor>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Mixture</object-name>
+    <property>controls/engines/engine/mixture</property>
+    <factor> 63 </factor>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>PropPitch</object-name>
+    <property>controls/engines/engine/propeller-pitch</property>
+    <factor> 64 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

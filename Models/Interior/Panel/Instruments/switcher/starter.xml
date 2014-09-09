@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>shutoff.ac</path>
+
+  <animation>
+    <object-name>case</object-name>
+    <object-name>screws</object-name>
+    <object-name>button</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>button</object-name>
+    <emission>
+      <red>   0.10 </red>
+      <green> 0.2 </green>
+      <blue>  0.20 </blue>
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+    </emission>
+  </animation>
+
+  <animation> 
+    <type>translate</type>
+    <object-name>button</object-name>
+    <property>controls/engines/engine[0]/starter</property>
+    <factor> 0.003 </factor>
+    <axis> 
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>                                                              
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>button</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+     <binding>
+       <command>nasal</command>
+       <script>controls.startEngine(1)</script>
+     </binding>
+     <mod-up>
+       <binding>
+         <command>nasal</command>
+         <script>controls.startEngine(0)</script>
+       </binding>
+     </mod-up>                   
+    </action>
+  </animation> 
+
+</PropertyList>

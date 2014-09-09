@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+
+<PropertyList>
+
+  <model>
+    <path>Aircraft/Junkers-W34/Models/Interior/Seat/seat.xml</path>
+    <offsets>
+      <x-m> -1.5 </x-m>
+      <y-m> -0.3542 </y-m>
+      <z-m>  0.08 </z-m>
+    </offsets>
+  </model>
+   
+  <model>
+    <path>Aircraft/Junkers-W34/Models/Interior/Seat/seat.xml</path>
+    <offsets>
+      <x-m> -1.5 </x-m>
+      <y-m>  0.3541 </y-m>
+      <z-m>  0.08 </z-m>
+    </offsets>
+  </model>
+ 
+  <model>
+    <path>Aircraft/Junkers-W34/Models/Interior/Seat/seat.xml</path>
+    <offsets>
+      <x-m> -0.7300 </x-m>
+      <y-m>  0.3200 </y-m>
+      <z-m>  0.0748 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Junkers-W34/Models/Interior/Seat/seat.xml</path>
+    <offsets>
+      <x-m> 0.068 </x-m>
+      <y-m> 0.292 </y-m>
+      <z-m> 0.066 </z-m>
+    </offsets>
+  </model>
+ 
+  <model>
+    <path>Aircraft/Junkers-W34/Models/Interior/Seat/seat.xml</path>
+    <offsets>
+      <x-m>  0.850 </x-m>
+      <y-m> -0.207 </y-m>
+      <z-m>  0.020 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Junkers-W34/Models/Interior/Seat/seat.xml</path>
+    <offsets>
+      <x-m> 0.850 </x-m>
+      <y-m> 0.207 </y-m>
+      <z-m> 0.020 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>

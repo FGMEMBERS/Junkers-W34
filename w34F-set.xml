@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- <PropertyList include="w34F-jsbsim-cnf.xml"> -->
+<PropertyList include="w34F-yasim-cnf.xml">
+
+ <sim>
+
+    <description>Junkers W34 Floats (YASim)</description>
+    <author>Emmanuel BARANGER (3D/FDM) Cpt Goosnen (Cockpit/textures etc.)</author>
+
+    <rating>
+      <FDM type="int">     2 </FDM>
+      <systems type="int"> 2 </systems>
+      <cockpit type="int"> 2 </cockpit>
+      <model type="int">   3 </model>
+    </rating>
+
+  </sim>
+  
+</PropertyList>
+
+
+
+
+
+
+

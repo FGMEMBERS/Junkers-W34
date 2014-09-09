@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>shutoff.ac</path>
+
+  <animation>
+    <object-name>case</object-name>
+    <object-name>screws</object-name>
+    <object-name>button</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>button</object-name>
+    <emission>
+      <red>   0.1 </red>
+      <green> 0.1 </green>
+      <blue>  0.1 </blue>
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+    </emission>
+  </animation>
+
+  <animation> 
+    <type>translate</type>
+    <object-name>button</object-name>
+    <property>controls/engines/engine[0]/ignition</property>
+    <factor> 0.003 </factor>
+    <axis> 
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>                                                              
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>button</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/engines/engine[0]/ignition</property>
+        <value>1</value>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>controls/engines/engine[0]/ignition</property>
+          <value>0</value>
+        </binding>
+      </mod-up>                     
+    </action>
+  </animation> 
+
+</PropertyList>

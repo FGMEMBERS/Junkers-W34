@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <!-- Le fuselage -->
+  <model>
+    <path>Aircraft/Junkers-W34/Models/main.xml</path>
+  </model>
+
+  <!-- Les roues -->
+  <model>
+    <name>LesRoues</name>
+    <path>Aircraft/Junkers-W34/Models/wheels.xml</path>
+  </model>
+
+  <!-- Une ombre pour OSG -->
+  <model>
+    <name>OmbreRoues</name>
+    <path>Aircraft/Junkers-W34/Models/shadow.xml</path>
+    <offsets>
+      <x-m>  0.0 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m> -1.6 </z-m>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>LesRoues</object-name>
+    <object-name>OmbreRoues</object-name>
+    <condition>
+      <equals>
+        <property>sim/multiplay/generic/string[1]</property>
+        <value>wheels</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <!-- Les flotteurs -->
+  <model>
+    <name>LesFlotteurs</name>
+    <path>Aircraft/Junkers-W34/Models/floats.xml</path>
+  </model>
+
+  <!-- Une ombre pour OSG -->
+  <model>
+    <name>OmbreFlotteurs</name>
+    <path>Aircraft/Junkers-W34/Models/shadowF.xml</path>
+    <offsets>
+      <x-m> -0.38375 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -2.31323 </z-m>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>LesFlotteurs</object-name>
+    <object-name>OmbreFlotteurs</object-name>
+    <condition>
+      <equals>
+        <property>sim/multiplay/generic/string[1]</property>
+        <value>floats</value>
+      </equals>
+    </condition>
+  </animation>
+
+</PropertyList>
