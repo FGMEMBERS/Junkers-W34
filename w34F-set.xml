@@ -8,6 +8,8 @@
     <description>Junkers W34 Floats (YASim)</description>
     <author>Emmanuel BARANGER (3D/FDM) Cpt Goosnen (Cockpit/textures etc.)</author>
 
+    <variant-of>w34</variant-of>
+    
     <rating>
       <FDM type="int">     2 </FDM>
       <systems type="int"> 2 </systems>
@@ -16,12 +18,5 @@
     </rating>
 
   </sim>
-  
+
 </PropertyList>
-
-
-
-
-
-
-
